@@ -1,1355 +1,1012 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: cursive;
-  margin: 0px;
-  padding: 0px;
-}
-
-/* Variables */
+/* Root Variables */
 :root {
-  --color1: #000000;
-  --color2: #ffffff;
-  --color3: #021b2b;
-  --color4: #2a56bb;
-  --color5: #aaaaaa;
+  /* Colors - Nicaragua Brand */
+  --color-primary: #003DA5;
+  --color-secondary: #FFFFFF;
+  --color-accent: #FFD700;
+  --color-accent-hover: #E6C200;
+  --color-dark: #1a1a1a;
+  --color-light: #ffffff;
+  --color-gray: #f5f5f5;
+  --color-gray-medium: #666666;
+  --color-gray-light: #e0e0e0;
+  --color-success: #10B981;
+  --color-error: #EF4444;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-section: 6rem;
+  --space-section-desktop: 8rem;
+  --space-gap: 2rem;
+  --space-gap-desktop: 3rem;
+  --space-card: 2.5rem;
+
+  /* Typography */
+  --font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2rem;
+  --font-size-2xl: 2.5rem;
+  --font-size-3xl: 3rem;
+  --font-size-4xl: 4rem;
+  --line-height: 1.6;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 4px 20px rgba(0, 61, 165, 0.1);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
-/* Estilos Generales */
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #144ccb #021b2b;
+  scroll-padding-top: 80px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-dark);
+  background-color: var(--color-light);
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
-.btn {
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  color: var(--color5);
-  border: 1px solid var(--color5);
-}
-
-.abrir {
+img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-.cerrar {
-  display: none;
+ul,
+ol {
+  list-style: none;
 }
 
-/* Estilos Navbar */
-#label {
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+button {
   cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Utilities */
+.skip-link {
+  transition: all var(--transition-base);
+  position: absolute;
+  top: -100%;
+  left: var(--space-sm);
+  z-index: 1000;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  color: var(--color-light);
+  background: var(--color-primary);
+}
+
+.skip-link:focus {
+  top: var(--space-sm);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Buttons */
+.btn {
+  transition: all var(--transition-base);
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-lg);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-light);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.btn-secondary {
+  background: var(--color-accent);
+  color: var(--color-dark);
+  border-color: var(--color-accent);
+}
+
+.btn-secondary:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.btn-outline {
+  color: var(--color-primary);
+  background: transparent;
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  color: var(--color-light);
+  background: var(--color-primary);
+}
+
+.btn-ghost {
+  color: var(--color-primary);
+  background: transparent;
+  border-color: transparent;
+}
+
+.btn-ghost:hover {
+  background: rgba(0, 61, 165, 0.1);
+}
+
+/* Header / Navbar */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: var(--color-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.menu-toggle {
+  pointer-events: none;
   position: fixed;
-  transition: all 1s ease;
-  font-size: 1.5rem;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2;
-  color: var(--color5);
-}
-
-#checkbox:checked ~ #label .cerrar {
-  display: block;
-  transition: all 1s ease;
-  opacity: 1;
-}
-
-#checkbox:checked ~ #label .abrir {
-  display: none;
-  transition: all 1s ease;
   opacity: 0;
 }
 
-#checkbox:checked ~ .navbar {
-  transition: all 1s ease;
-  right: 0px;
-}
-
 .navbar {
-  position: fixed;
-  transition: all 1s ease;
-  top: 0px;
-  right: -100%;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  background-color: var(--color1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.navbar__list {
+.navbar-logo {
   display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.navbar-logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.menu-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.menu-links a {
+  transition: color var(--transition-fast);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-medium);
+  position: relative;
+}
+
+.menu-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width var(--transition-fast);
+}
+
+.menu-links a:hover,
+.menu-links a.active {
+  color: var(--color-primary);
+}
+
+.menu-links a:hover::after,
+.menu-links a.active::after {
+  width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  display: none;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 100%;
-  gap: 2rem;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  gap: 5px;
+  z-index: 1001;
 }
 
-.navbar__list__item a {
-  text-transform: uppercase;
-  transition: all 1s ease;
-  font-size: 1.2rem;
-  color: var(--color2);
+.hamburger span {
+  transition: all var(--transition-base);
+  height: 2px;
+  background-color: var(--color-dark);
+  border-radius: 2px;
 }
 
-/* Estilos Inicio */
-.inicio {
+/* Main - Sections */
+main {
+  width: 100%;
+}
+
+/* Sections - Globals */
+.section {
+  padding: var(--space-section) var(--space-md);
+}
+
+.section-dark {
+  background-color: var(--color-gray);
+}
+
+.section-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
+  color: var(--color-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container-text {
   text-align: center;
-  padding: 1rem;
-  color: var(--color2);
-  background-color: var(--color1);
+  margin: 0 auto;
+  max-width: 800px;
+  margin-bottom: var(--space-2xl);
 }
 
-.inicio__img img {
-  display: none;
+.container-text h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+  line-height: 1.2;
 }
 
-.inicio__texto h1 {
-  font-size: 1.5rem;
+.container-text p {
+  font-size: var(--font-size-md);
+  color: var(--color-gray-medium);
+  line-height: 1.7;
 }
 
-.inicio__texto h2 {
-  font-size: 0.9rem;
+.section-primary .container-text h2 {
+  color: var(--color-light);
 }
 
-/* Main Conoce Nicaragua */
-.conoceNic {
-  padding: 1.5rem;
+.section-primary .container-text p {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.conoceNic h2 {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.conoceNic__video {
-  display: flex;
-  justify-content: center;
-}
-
-.conoceNic__video video {
-  object-fit: cover;
-  width: 90%;
-  border-radius: 20px;
-  box-shadow: 1rem 0.5rem 0.5rem var(--color1);
-}
-
-/* Estilos Turismo */
-#turismo {
-  text-align: center;
-  padding: 1rem;
-  color: var(--color1);
-}
-
-#turismo h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-#turismo p {
-  font-size: 1rem;
-}
-
-.turismo__cards {
+/* Hero */
+.hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-bottom: 1rem;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-2xl) var(--space-md);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 50%, #0088ff 100%);
+  color: var(--color-light);
+  position: relative;
+  overflow: hidden;
 }
 
-.turismo__cards__ciudades {
-  transition: all 0.5s ease;
-  height: 250px;
-  margin: 1rem;
-  border-radius: 1rem;
-  color: var(--color2);
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-content h1 {
+  font-size: var(--font-size-2xl);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: var(--font-size-md);
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image img {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+}
+
+/* Video Section */
+.video-section {
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.card {
+  transition: all var(--transition-base);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-light);
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: var(--space-lg);
+}
+
+.card-content h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+
+.card-content p {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-medium);
+  line-height: 1.6;
+}
+
+/* City Cards (Turismo) */
+.city-card {
+  position: relative;
+  min-height: 320px;
   background-size: cover;
   background-position: center;
-  box-shadow: 1rem 1rem 0.5rem var(--color5);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
 }
 
-.managua {
-  background-image: url("/Assets/Img/managua.png");
+.city-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
-.granada {
-  background-image: url("/Assets/Img/granada.png");
+.city-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-lg);
+  color: var(--color-light);
+  transform: translateY(60%);
+  transition: transform var(--transition-base);
 }
 
-.leon {
-  background-image: url("/Assets/Img/leon.png");
+.city-card:hover .city-card-content {
+  transform: translateY(0);
 }
 
-.sanJuan {
-  background-image: url("/Assets/Img/sanJuan.png");
+.city-card-content h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
 }
 
-.ometepe {
-  background-image: url("/Assets/Img/ometepe.png");
+.city-card-content ul {
+  margin-bottom: var(--space-md);
 }
 
-.cornIsland {
-  background-image: url("/Assets/Img/cornIsland.png");
+.city-card-content li {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-xs);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all var(--transition-base);
 }
 
-.masaya {
-  background-image: url("/Assets/Img/masaya.png");
+.city-card:hover .city-card-content li {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.esteli {
-  background-image: url("/Assets/Img/esteli.png");
+.city-card-content li:nth-child(1) { transition-delay: 0.05s; }
+.city-card-content li:nth-child(2) { transition-delay: 0.1s; }
+.city-card-content li:nth-child(3) { transition-delay: 0.15s; }
+.city-card-content li:nth-child(4) { transition-delay: 0.2s; }
+
+.city-card-content li a {
+  color: var(--color-light);
+  text-decoration: underline;
 }
 
-.rioSanJuan {
-  background-image: url("/Assets/Img/rioSanJuan.png");
+.city-card-content li a:hover {
+  color: var(--color-accent);
 }
 
-.matagalpa {
-  background-image: url("/Assets/Img/matagalpa.png");
+.city-card .btn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition-base);
+  transition-delay: 0.25s;
 }
 
-.bluefields {
-  background-image: url("/Assets/Img/bluefields.png");
+.city-card:hover .btn {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.turismo__cards__ciudades-mostar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Food Cards (Gastronomía) */
+.food-card {
+  background: var(--color-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.food-card-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.food-card-image img {
   width: 100%;
   height: 100%;
-  gap: 1rem;
-  border-radius: 1rem;
-  background-color: #00000080;
-}
-
-.turismo__cards__ciudades-mostar h3 {
-  font-size: 1.2rem;
-  text-decoration: underline;
-}
-
-.turismo__cards__ciudades-mostar ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.turismo__cards__ciudades-mostar ul li {
-  list-style: disc;
-}
-
-.turismo__cards__ciudades-mostar ul li a {
-  font-size: 1rem;
-  color: var(--color2);
-}
-
-.turismo__cards__ciudades-mostar ul li a:active {
-  color: var(--color2);
-}
-
-#check-Turismo:not(:checked) ~ .oculto {
-  display: none;
-}
-
-#check-Turismo:checked ~ .oculto {
-  display: block;
-}
-
-/* Estilos Gastronomía */
-#gastronomía {
-  text-align: center;
-  padding: 1rem;
-  color: var(--color3);
-}
-
-#gastronomía h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-#gastronomía p {
-  font-size: 1rem;
-}
-
-.gastronomía__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-.gastronomía__card__item {
-  padding: 1rem;
-  border-radius: 1rem;
-  color: var(--color2);
-  background-color: var(--color3);
-}
-
-.gastronomía__card__item-mostrar img {
   object-fit: cover;
-  width: 200px;
-  height: 150px;
-  margin: 0.5rem 0;
-  border-radius: 5px;
+  transition: transform var(--transition-slow);
 }
 
-.gastronomía__card__item-mostrar p {
-  text-align: center;
-  font-size: 1rem;
-  margin: 0.5rem 0;
+.food-card:hover .food-card-image img {
+  transform: scale(1.1);
 }
 
-#check-Gastronomía:not(:checked) ~ .oculto {
-  display: none;
+.food-card-content {
+  padding: var(--space-lg);
 }
 
-#check-Gastronomía:checked ~ .oculto {
-  display: block;
+.food-card-content h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
 }
 
-/* Estilos Historia */
-#historia {
-  text-align: center;
-  padding: 1rem;
-  color: var(--color3);
+.food-card-content p {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-medium);
+  line-height: 1.6;
 }
 
-#historia h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+/* History Cards */
+.history-card {
+  background: var(--color-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 
-#historia p {
-  font-size: 1rem;
+.history-card-header {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
 }
 
-.historia__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.historia__card__item {
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 1rem;
-  box-shadow: 1rem 1rem 0.5rem var(--color5);
-}
-
-.historia__card__item h3 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-}
-
-.historia__card__item-mostrar {
-  margin: 1rem 0;
-}
-
-.historia__card__item__img img {
-  object-fit: cover;
-  height: auto;
+.history-card-header img {
   width: 100%;
-  border-radius: 1rem;
-}
-
-.historia__card__item__texto {
-  text-align: left;
-  overflow-y: scroll;
-  height: 150px;
-  margin: 1rem 0;
-  padding: 0 1rem;
-}
-
-.historia__card__item__texto p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-#check-historia:not(:checked) ~ .oculto {
-  display: none;
-}
-
-#check-historia:checked ~ .oculto {
-  display: block;
-}
-
-/* Estilos Curiosidades */
-#curiosidades {
-  text-align: center;
-  padding: 1rem;
-  color: var(--color3);
-}
-
-#curiosidades h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-#curiosidades p {
-  font-size: 1rem;
-}
-
-.curiosidades__container {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  gap: 1rem;
-  margin: 1rem auto;
-  padding: 0.5rem 0;
-}
-
-.container__item details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--color5);
-  border-top: 4px solid var(--color3);
-}
-
-.container__item details summary {
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  color: var(--color3);
-}
-
-#check-curiosidades:not(:checked) ~ .oculto {
-  display: none;
-}
-
-#check-curiosidades:checked ~ .oculto {
-  display: block;
-}
-
-/* Estilos Footer */
-#footer {
-  text-align: center;
-  margin-top: 1rem;
-  padding-bottom: 1.5rem;
-}
-
-.footer__mailto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem 0;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 0 0 2.5rem 2.5rem;
-  color: var(--color2);
-  background-color: var(--color1);
-  box-shadow: 0rem 0.5rem 1rem var(--color3);
-}
-
-.footer__mailto h2,
-p {
-  font-size: 1rem;
-}
-
-.footer__mailto a {
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  border: 1px solid var(--color2);
-  color: var(--color2);
-}
-
-.footer__info p {
-  font-size: 1rem;
-}
-
-.footer__info p:first-child {
-  font-size: 1.2rem;
-}
-
-.footer__info p span {
-  text-decoration: underline;
-}
-
-.footer__info ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  gap: 2rem;
-  margin: 1rem 0;
-}
-
-.footer__info ul li a img {
+  height: 100%;
   object-fit: cover;
-  width: 1.8rem;
 }
 
-/* Media Queries */
-/* Mobile M */
-@media screen and (min-width: 375px) {
-  /* Estilo Globales */
-  .btn {
-    padding: 0.6rem 1.1rem;
-  }
-
-  /* Estilos Navbar */
-  #label {
-    font-size: 1.6rem;
-    top: 1.1rem;
-    right: 1.1rem;
-  }
-
-  .navbar__list__item a {
-    font-size: 1.3rem;
-  }
-
-  /* Estilos Inicio */
-  .inicio__texto h1 {
-    font-size: 1.6rem;
-  }
-
-  .inicio__texto h2 {
-    font-size: 1rem;
-  }
-
-  /* Conoce Nicaragua */
-  .conoceNic h2 {
-    font-size: 1.3rem;
-  }
-
-  /* Estilos Turismo */
-  #turismo h2 {
-    font-size: 1.6rem;
-  }
-
-  #turismo p {
-    font-size: 1.1rem;
-  }
-
-  .turismo__cards__ciudades-mostar h3 {
-    font-size: 1.3rem;
-  }
-
-  .turismo__cards__ciudades-mostar ul li a {
-    font-size: 1.1rem;
-  }
-
-  /* Estilos Gastronomía */
-  #gastronomía h2 {
-    font-size: 1.6rem;
-  }
-
-  #gastronomía p {
-    font-size: 1.1rem;
-  }
-
-  .gastronomía__card__item-mostrar p {
-    font-size: 1.1rem;
-  }
-
-  /* Estilos Historia */
-  #historia h2 {
-    font-size: 1.6rem;
-  }
-
-  #historia p {
-    font-size: 1.1rem;
-  }
-
-  .historia__card__item h3 {
-    font-size: 1.3rem;
-  }
-
-  .historia__card__item__texto p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-
-  /* Estilos Curiosidades */
-  #curiosidades h2 {
-    font-size: 1.6rem;
-  }
-
-  #curiosidades p {
-    font-size: 1.1rem;
-  }
-
-  .container__item details {
-    font-size: 1rem;
-  }
-
-  .container__item details summary {
-    font-size: 1.3rem;
-  }
-
-  /* Estilos Footer */
-  .footer__mailto h2,
-  p {
-    font-size: 1.1rem;
-  }
-
-  .footer__mailto a {
-    font-size: 1.1rem;
-  }
-
-  .footer__info p {
-    font-size: 1.1rem;
-  }
-
-  .footer__info p:first-child {
-    font-size: 1.3rem;
-  }
-
-  .footer__info ul li a img {
-    object-fit: cover;
-    width: 1.9rem;
-  }
+.history-card-body {
+  padding: var(--space-lg);
 }
 
-/* Mobile L */
-@media screen and (min-width: 425px) {
-  /* Estilo Globales */
-  .btn {
-    padding: 0.7rem 1.2rem;
-  }
-
-  /* Estilos Navbar */
-  #label {
-    font-size: 1.7rem;
-    top: 1.2rem;
-    right: 1.2rem;
-  }
-
-  .navbar__list__item a {
-    font-size: 1.4rem;
-  }
-
-  /* Estilos Inicio */
-  .inicio__texto h1 {
-    font-size: 1.7rem;
-  }
-
-  .inicio__texto h2 {
-    font-size: 1.1rem;
-  }
-
-  /* Conoce Nicaragua */
-  .conoceNic h2 {
-    font-size: 1.4rem;
-  }
-
-  /* Estilos Turismo */
-  #turismo h2 {
-    font-size: 1.7rem;
-  }
-
-  #turismo p {
-    font-size: 1.2rem;
-  }
-
-  .turismo__cards__ciudades-mostar h3 {
-    font-size: 1.4rem;
-  }
-
-  .turismo__cards__ciudades-mostar ul li a {
-    font-size: 1.2rem;
-  }
-
-  /* Estilos Gastronomía */
-  #gastronomía h2 {
-    font-size: 1.7rem;
-  }
-
-  #gastronomía p {
-    font-size: 1.1rem;
-  }
-
-  .gastronomía__card__item-mostrar p {
-    font-size: 1.2rem;
-  }
-
-  /* Estilos Historia */
-  #historia h2 {
-    font-size: 1.7rem;
-  }
-
-  #historia p {
-    font-size: 1.2rem;
-  }
-
-  .historia__card__item h3 {
-    font-size: 1.4rem;
-  }
-
-  .historia__card__item__texto p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-
-  /* Estilos Curiosidades */
-  #curiosidades h2 {
-    font-size: 1.7rem;
-  }
-
-  #curiosidades p {
-    font-size: 1.2rem;
-  }
-
-  .container__item details {
-    font-size: 1.2rem;
-  }
-
-  .container__item details summary {
-    font-size: 1.4rem;
-  }
-
-  /* Estilos Footer */
-  .footer__mailto h2,
-  p {
-    font-size: 1.2rem;
-  }
-
-  .footer__mailto a {
-    font-size: 1.2rem;
-  }
-
-  .footer__info p {
-    font-size: 1.2rem;
-  }
-
-  .footer__info p:first-child {
-    font-size: 1.4rem;
-  }
-
-  .footer__info ul li a img {
-    object-fit: cover;
-    width: 2rem;
-  }
+.history-card-body h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
 }
 
-/* Tablet */
-@media screen and (min-width: 768px) {
-  /* Estilo Globales */
-  .btn {
-    padding: 0.8rem 1.3rem;
-  }
-
-  /* Estilos Navbar */
-  #label {
-    font-size: 1.8rem;
-    top: 1.3rem;
-    right: 1.3rem;
-  }
-
-  .navbar__list__item a {
-    font-size: 1.5rem;
-  }
-
-  /* Estilos Inicio */
-  .inicio__texto h1 {
-    font-size: 1.8rem;
-  }
-
-  .inicio__texto h2 {
-    font-size: 1.2rem;
-  }
-
-  /* Conoce Nicaragua */
-  .conoceNic h2 {
-    font-size: 1.5rem;
-  }
-
-  .conoceNic__video video {
-    width: 80%;
-  }
-
-  /* Estilos Turismo */
-  #turismo h2 {
-    font-size: 1.8rem;
-  }
-
-  #turismo p {
-    font-size: 1.3rem;
-  }
-
-  .turismo__cards__ciudades-mostar h3 {
-    font-size: 1.5rem;
-  }
-
-  .turismo__cards__ciudades-mostar ul li a {
-    font-size: 1.3rem;
-  }
-
-  /* Estilos Gastronomía */
-  #gastronomía h2 {
-    font-size: 1.8rem;
-  }
-
-  #gastronomía p {
-    font-size: 1.2rem;
-  }
-
-  .gastronomía__card__item-mostrar p {
-    font-size: 1.3rem;
-  }
-
-  /* Estilos Historia */
-  #historia h2 {
-    font-size: 1.8rem;
-  }
-
-  #historia p {
-    font-size: 1.3rem;
-  }
-
-  .historia__card__item h3 {
-    font-size: 1.5rem;
-  }
-
-  .historia__card__item__texto p {
-    font-size: 1.3rem;
-    line-height: 1.5;
-  }
-
-  /* Estilos Curiosidades */
-  #curiosidades h2 {
-    font-size: 1.8rem;
-  }
-
-  #curiosidades p {
-    font-size: 1.3rem;
-  }
-
-  .container__item details {
-    font-size: 1.3rem;
-  }
-
-  .container__item details summary {
-    font-size: 1.5rem;
-  }
-
-  /* Estilos Footer */
-  .footer__mailto {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    justify-items: center;
-    border-radius: 2rem;
-  }
-
-  .footer__mailto h2,
-  p {
-    font-size: 1.3rem;
-  }
-
-  .footer__mailto a {
-    font-size: 1.3rem;
-  }
-
-  .footer__info p {
-    font-size: 1.3rem;
-  }
-
-  .footer__info p:first-child {
-    font-size: 1.5rem;
-  }
-
-  .footer__info ul li a img {
-    object-fit: cover;
-    width: 2.1rem;
-  }
+.history-card-body p {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-medium);
+  line-height: 1.8;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
-/* Laptop  */
-@media screen and (min-width: 1024px) {
-  /* Estilo Globales */
-  .btn {
-    display: none;
-  }
+/* Accordion (Curiosidades) */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-  .abrir {
-    display: none;
-  }
+.accordion-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-gray-light);
+  background: var(--color-light);
+}
 
-  .cerrar {
-    display: none;
-  }
+.accordion-item summary {
+  cursor: pointer;
+  padding: var(--space-lg);
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all var(--transition-fast);
+}
 
-  /* Estilos Navbar */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
+.accordion-item summary:hover {
+  background: var(--color-gray);
+}
 
-  #label {
-    font-size: 1.9rem;
-    top: 1.5rem;
-    right: 1.4rem;
-  }
+.accordion-item summary::after {
+  content: '+';
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  transition: transform var(--transition-fast);
+}
 
-  .navbar {
-    position: static;
-    height: 10dvh;
-    background-color: var(--color2);
-    border: 1px solid var(--color5);
-  }
+.accordion-item[open] summary::after {
+  transform: rotate(45deg);
+}
 
-  .navbar__list {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-  }
+.accordion-item p {
+  padding: 0 var(--space-lg) var(--space-lg);
+  color: var(--color-gray-medium);
+  line-height: 1.8;
+}
 
-  .navbar__list__item a {
-    font-size: 1.6rem;
-    color: var(--color4);
-  }
+/* Footer */
+.footer {
+  padding: var(--space-2xl) var(--space-md);
+  color: var(--color-light);
+  background: var(--color-primary);
+}
 
-  /* Estilos Inicio */
-  .inicio__texto h1 {
-    font-size: 1.9rem;
-  }
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-  .inicio__texto h2 {
-    font-size: 1.3rem;
-  }
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
 
-  /* Conoce Nicaragua */
-  .conoceNic h2 {
-    font-size: 1.6rem;
-  }
+.footer-brand-logo {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
 
-  .conoceNic__video video {
-    width: 70%;
-  }
+.footer-brand p {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
 
-  /* Estilos Turismo */
-  #turismo h2 {
-    font-size: 1.9rem;
-  }
+.footer-social {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
 
-  #turismo p {
-    font-size: 1.4rem;
-  }
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-fast);
+}
 
-  .turismo__cards {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1rem;
-    margin: 2rem;
-  }
+.footer-social a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
 
-  .turismo__cards__ciudades-mostar {
-    display: none;
-  }
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-light);
+}
 
-  .turismo__cards__ciudades:hover .turismo__cards__ciudades-mostar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.footer-column h3 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+}
+
+.footer-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-column a {
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-column a:hover {
+  color: var(--color-light);
+  padding-left: var(--space-sm);
+}
+
+.footer-cta {
+  text-align: center;
+}
+
+.footer-cta h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-cta p {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-lg);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+  text-align: center;
+}
+
+.footer-bottom nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.footer-bottom a {
+  transition: color var(--transition-fast);
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom a:hover {
+  color: var(--color-light);
+}
+
+.footer-bottom span {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Page Header (for inner pages) */
+.page-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
+  color: var(--color-light);
+  padding: var(--space-2xl) var(--space-md);
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+.page-header p {
+  font-size: var(--font-size-md);
+  opacity: 0.9;
+}
+
+/* Show More Button */
+.show-more-container {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+    padding: var(--space-section) var(--space-xl);
+  }
+
+  .hero-content h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .container-text h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .page-header h1 {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-section-desktop) var(--space-xl);
+  }
+
+  .hero {
+    padding: var(--space-section-desktop) var(--space-2xl);
+  }
+
+  .hero-content h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-xl);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-menu {
+    transition: all var(--transition-base);
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 89;
+    padding: var(--space-lg);
+    background: var(--color-light);
+    box-shadow: var(--shadow-lg);
+    gap: var(--space-lg);
+  }
+
+  .menu-links {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .menu-links a {
+    font-size: var(--font-size-md);
+  }
+
+  .menu-toggle:checked ~ .navbar-menu {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
     width: 100%;
-    height: 100%;
-    gap: 1rem;
-    border-radius: 1rem;
-    background-color: #00000080;
   }
 
-  .turismo__cards__ciudades-mostar h3 {
-    font-size: 1.6rem;
-  }
-
-  .turismo__cards__ciudades-mostar ul li a {
-    font-size: 1.4rem;
-  }
-
-  #check-Turismo:not(:checked) ~ .oculto {
-    display: block;
-  }
-
-  /* Estilos Gastronomía */
-  #gastronomía h2 {
-    font-size: 1.9rem;
-  }
-
-  #gastronomía p {
-    font-size: 1.3rem;
-  }
-
-  .gastronomía__cards {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-    margin: 2rem;
-  }
-
-  .gastronomía__card__item-mostrar p {
-    font-size: 1.4rem;
-  }
-
-  #check-Gastronomía:not(:checked) ~ .oculto {
-    display: block;
-  }
-
-  /* Estilos Historia */
-  #historia h2 {
-    font-size: 1.9rem;
-  }
-
-  #historia p {
-    font-size: 1.4rem;
-  }
-
-  .historia__cards {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 4rem;
-    margin: 2rem;
-  }
-
-  .historia__card__item h3 {
-    font-size: 1.6rem;
-  }
-
-  .historia__card__item__texto p {
-    font-size: 1.4rem;
-    line-height: 1.5;
-  }
-
-  #check-historia:not(:checked) ~ .oculto {
-    display: block;
-  }
-
-  /* Estilos Curiosidades */
-  #curiosidades h2 {
-    font-size: 1.9rem;
-  }
-
-  #curiosidades p {
-    font-size: 1.4rem;
-  }
-
-  .curiosidades__container {
-    width: 80%;
-    margin: 2rem auto;
-  }
-
-  .container__item details {
-    font-size: 1.4rem;
-  }
-
-  .container__item details summary {
-    font-size: 1.6rem;
-  }
-
-  #check-curiosidades:not(:checked) ~ .oculto {
-    display: block;
-  }
-
-  /* Estilos Footer */
-  .footer__mailto {
-    height: 150px;
-    margin: 3rem;
-  }
-
-  .footer__mailto h2,
-  p {
-    font-size: 1.4rem;
-  }
-
-  .footer__mailto a {
-    font-size: 1.4rem;
-  }
-
-  .footer__info p {
-    font-size: 1.4rem;
-  }
-
-  .footer__info p:first-child {
-    font-size: 1.6rem;
-  }
-
-  .footer__info ul li a img {
-    object-fit: cover;
-    width: 2.2rem;
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* Laptop L */
-@media screen and (min-width: 1440px) {
-  /* Estilos Navbar */
-  .navbar__list__item a {
-    font-size: 1.7rem;
-    color: var(--color4);
-  }
-
-  /* Estilos Inicio */
-  .inicio__texto h1 {
-    font-size: 2rem;
-  }
-
-  .inicio__texto h2 {
-    font-size: 1.4rem;
-  }
-
-  /* Conoce Nicaragua */
-  .conoceNic h2 {
-    font-size: 1.7rem;
-  }
-
-  .conoceNic__video video {
-    width: 60%;
-  }
-
-  /* Estilos Turismo */
-  #turismo h2 {
-    font-size: 2rem;
-  }
-
-  #turismo p {
-    font-size: 1.5rem;
-  }
-
-  .turismo__cards {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  }
-
-  .turismo__cards__ciudades-mostar h3 {
-    font-size: 1.7rem;
-  }
-
-  .turismo__cards__ciudades-mostar ul li a {
-    font-size: 1.5rem;
-  }
-
-  /* Estilos Gastronomía */
-  #gastronomía h2 {
-    font-size: 2rem;
-  }
-
-  #gastronomía p {
-    font-size: 1.4rem;
-  }
-
-  .gastronomía__card__item-mostrar p {
-    font-size: 1.5rem;
-  }
-
-  /* Estilos Historia */
-  #historia h2 {
-    font-size: 2rem;
-  }
-
-  #historia p {
-    font-size: 1.5rem;
-  }
-
-  .historia__card__item h3 {
-    font-size: 1.7rem;
-  }
-
-  .historia__card__item__texto p {
-    font-size: 1.5rem;
-    line-height: 1.5;
-  }
-
-  /* Estilos Curiosidades */
-  #curiosidades h2 {
-    font-size: 2rem;
-  }
-
-  #curiosidades p {
-    font-size: 1.5rem;
-  }
-
-  .curiosidades__container {
-    width: 80%;
-    margin: 2rem auto;
-  }
-
-  .container__item details {
-    font-size: 1.5rem;
-  }
-
-  .container__item details summary {
-    font-size: 1.7rem;
-  }
-
-  /* Estilos Footer */
-  .footer__mailto {
-    height: 200px;
-    margin: 4rem;
-  }
-
-  .footer__mailto h2,
-  p {
-    font-size: 1.5rem;
-  }
-
-  .footer__mailto a {
-    font-size: 1.5rem;
-  }
-
-  .footer__info p {
-    font-size: 1.5rem;
-  }
-
-  .footer__info p:first-child {
-    font-size: 1.7rem;
-  }
-
-  .footer__info ul li a img {
-    object-fit: cover;
-    width: 2.3rem;
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-/* 4K */
-@media screen and (min-width: 2560px) {
-  /* Estilos Navbar */
-  .navbar__list__item a {
-    font-size: 2.2rem;
-    color: var(--color4);
-  }
-
-  /* Estilos Inicio */
-  .inicio__texto h1 {
-    font-size: 2.5rem;
-  }
-
-  .inicio__texto h2 {
-    font-size: 1.9rem;
-  }
-
-  /* Conoce Nicaragua */
-  .conoceNic h2 {
-    font-size: 2.2rem;
-  }
-
-  .conoceNic__video video {
-    width: 60%;
-  }
-
-  /* Estilos Turismo */
-  #turismo h2 {
-    font-size: 2.5rem;
-  }
-
-  #turismo p {
-    font-size: 2rem;
-  }
-
-  .turismo__cards {
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  }
-
-  .turismo__cards__ciudades-mostar h3 {
-    font-size: 2.2rem;
-  }
-
-  .turismo__cards__ciudades-mostar ul li a {
-    font-size: 2rem;
-  }
-
-  /* Estilos Gastronomía */
-  #gastronomía h2 {
-    font-size: 2.5rem;
-  }
-
-  #gastronomía p {
-    font-size: 1.9rem;
-  }
-
-  .gastronomía__cards {
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 2rem;
-    margin: 2rem;
-  }
-
-  .gastronomía__card__item-mostrar p {
-    font-size: 2rem;
-  }
-
-  /* Estilos Historia */
-  #historia h2 {
-    font-size: 2.5rem;
-  }
-
-  #historia p {
-    font-size: 2rem;
-  }
-
-  .historia__cards {
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 4rem;
-    margin: 2rem;
-  }
-
-  .historia__card__item h3 {
-    font-size: 2.2rem;
-  }
-
-  .historia__card__item__texto p {
-    font-size: 2rem;
-    line-height: 1.5;
-  }
-
-  /* Estilos Curiosidades */
-  #curiosidades h2 {
-    font-size: 2.5rem;
-  }
-
-  #curiosidades p {
-    font-size: 2rem;
-  }
-
-  .curiosidades__container {
-    width: 80%;
-    margin: 2rem auto;
-  }
-
-  .container__item details {
-    font-size: 2rem;
-  }
-
-  .container__item details summary {
-    font-size: 2.2rem;
-  }
-
-  /* Estilos Footer */
-  .footer__mailto {
-    height: 250px;
-    margin: 5rem;
-  }
-
-  .footer__mailto h2,
-  p {
-    font-size: 2rem;
-  }
-
-  .footer__mailto a {
-    font-size: 2rem;
-  }
-
-  .footer__info p {
-    font-size: 2rem;
-  }
-
-  .footer__info p:first-child {
-    font-size: 2.1rem;
-  }
-
-  .footer__info ul li a img {
-    object-fit: cover;
-    width: 2.6rem;
-  }
+/* Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
