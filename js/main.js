@@ -11,6 +11,64 @@
   const menuToggle = document.getElementById('menu-toggle');
   const menuLinks = document.querySelectorAll('.menu-links a');
   const animateElements = document.querySelectorAll('.animate-on-scroll');
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  // Theme Management
+  const THEME_KEY = 'nicaPage-theme';
+  
+  /**
+   * Get current theme from localStorage or system preference
+   */
+  function getTheme() {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    if (savedTheme) {
+      return savedTheme;
+    }
+    // Check system preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  }
+  
+  /**
+   * Set theme and save to localStorage
+   */
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+  }
+  
+  /**
+   * Toggle between light and dark theme
+   */
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  }
+  
+  /**
+   * Initialize theme on page load
+   */
+  function initTheme() {
+    const theme = getTheme();
+    setTheme(theme);
+    
+    // Add click listener to theme toggle button
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Listen for system theme changes
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem(THEME_KEY)) {
+          setTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+    }
+  }
 
   /**
    * Navbar scroll effect
@@ -172,6 +230,9 @@
    * Initialize all functionality
    */
   function init() {
+    // Initialize theme first (to avoid flash)
+    initTheme();
+    
     // Set active nav link
     setActiveNavLink();
     

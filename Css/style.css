@@ -1,7 +1,8 @@
 /* Root Variables */
 :root {
-  /* Colors - Nicaragua Brand */
+  /* Colors - Nicaragua Brand (Light Mode) */
   --color-primary: #003DA5;
+  --color-primary-light: #0052cc;
   --color-secondary: #FFFFFF;
   --color-accent: #FFD700;
   --color-accent-hover: #E6C200;
@@ -12,6 +13,18 @@
   --color-gray-light: #e0e0e0;
   --color-success: #10B981;
   --color-error: #EF4444;
+  
+  /* Theme-specific colors (Light Mode) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --border-color: #e0e0e0;
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --shadow-card: 0 4px 20px rgba(0, 61, 165, 0.1);
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.1);
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -58,6 +71,22 @@
   --transition-slow: 0.5s ease;
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: #252525;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #808080;
+  --border-color: #333333;
+  --navbar-bg: rgba(18, 18, 18, 0.95);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --color-gray: #2a2a2a;
+  --color-gray-light: #333333;
+}
+
 /* Reset */
 *,
 *::before,
@@ -77,9 +106,10 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   line-height: var(--line-height);
-  color: var(--color-dark);
-  background-color: var(--color-light);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 img {
@@ -208,8 +238,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 90;
-  background: var(--color-light);
-  box-shadow: var(--shadow-sm);
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-header);
   transition: all var(--transition-base);
 }
 
@@ -302,8 +333,55 @@ header.scrolled {
 .hamburger span {
   transition: all var(--transition-base);
   height: 2px;
-  background-color: var(--color-dark);
+  background-color: var(--text-primary);
   border-radius: 2px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-secondary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-base);
+}
+
+.theme-toggle:hover svg {
+  transform: rotate(15deg);
+}
+
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: none;
 }
 
 /* Main - Sections */
@@ -317,7 +395,7 @@ main {
 }
 
 .section-dark {
-  background-color: var(--color-gray);
+  background-color: var(--bg-secondary);
 }
 
 .section-primary {
@@ -341,13 +419,13 @@ main {
 .container-text h2 {
   font-size: var(--font-size-2xl);
   margin-bottom: var(--space-md);
-  color: var(--color-primary);
+  color: var(--text-primary);
   line-height: 1.2;
 }
 
 .container-text p {
   font-size: var(--font-size-md);
-  color: var(--color-gray-medium);
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
@@ -450,7 +528,7 @@ main {
   transition: all var(--transition-base);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--color-light);
+  background: var(--bg-card);
   box-shadow: var(--shadow-card);
 }
 
@@ -488,7 +566,7 @@ main {
 
 .card-content p {
   font-size: var(--font-size-sm);
-  color: var(--color-gray-medium);
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -574,7 +652,7 @@ main {
 
 /* Food Cards (Gastronomía) */
 .food-card {
-  background: var(--color-light);
+  background: var(--bg-card);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
@@ -614,13 +692,13 @@ main {
 
 .food-card-content p {
   font-size: var(--font-size-sm);
-  color: var(--color-gray-medium);
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 /* History Cards */
 .history-card {
-  background: var(--color-light);
+  background: var(--bg-card);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
@@ -650,10 +728,54 @@ main {
 
 .history-card-body p {
   font-size: var(--font-size-sm);
-  color: var(--color-gray-medium);
+  color: var(--text-secondary);
   line-height: 1.8;
   max-height: 150px;
   overflow-y: auto;
+}
+
+/* Adventure Cards (Naturaleza y Aventura) */
+.adventure-card {
+  position: relative;
+  min-height: 320px;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.adventure-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.adventure-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-lg);
+  color: var(--color-light);
+  transform: translateY(20%);
+  transition: transform var(--transition-base);
+}
+
+.adventure-card:hover .adventure-card-content {
+  transform: translateY(0);
+}
+
+.adventure-card-content h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-light);
+}
+
+.adventure-card-content p {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
 }
 
 /* Accordion (Curiosidades) */
@@ -668,8 +790,8 @@ main {
 .accordion-item {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--color-gray-light);
-  background: var(--color-light);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
 }
 
 .accordion-item summary {
@@ -677,7 +799,7 @@ main {
   padding: var(--space-lg);
   font-weight: 600;
   font-size: var(--font-size-md);
-  color: var(--color-primary);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -685,13 +807,14 @@ main {
 }
 
 .accordion-item summary:hover {
-  background: var(--color-gray);
+  background: var(--bg-secondary);
 }
 
 .accordion-item summary::after {
   content: '+';
   font-size: var(--font-size-xl);
   font-weight: 400;
+  color: var(--text-secondary);
   transition: transform var(--transition-fast);
 }
 
@@ -701,7 +824,7 @@ main {
 
 .accordion-item p {
   padding: 0 var(--space-lg) var(--space-lg);
-  color: var(--color-gray-medium);
+  color: var(--text-secondary);
   line-height: 1.8;
 }
 
