@@ -10,23 +10,22 @@
     <!-- SEO -->
     <meta
       name="description"
-      content="Descubre Nicaragua - su turismo, gastronomía, historia y curiosidades. Conoce los lugares más hermosos de la tierra de lagos y volcanes."
+      content="Explora Nicaragua con NicaPage: guía completa de turismo, gastronomía, historia, cultura y naturaleza. Descubre playas, volcanes, ciudades coloniales y tradiciones locales para planificar tu próxima aventura en la tierra de lagos y volcanes."
     />
     <meta
       name="keywords"
       content="Nicaragua, Turismo, Gastronomía, Historia, Cultura, Managua, Granada, León, San Juan del Sur"
     />
-    <meta name="author" content="Bryan14Saenz" />
+    <meta name="author" content="14BryanEspinoza" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="NicaPage - Descubre Nicaragua" />
     <meta
       property="og:description"
-      content="Descubre Nicaragua - su turismo, gastronomía, historia y curiosidades. La tierra de lagos y volcanes."
+      content="Explora Nicaragua con NicaPage: guía completa de turismo, gastronomía, historia, cultura y naturaleza. Descubre playas, volcanes, ciudades coloniales y tradiciones locales para planificar tu próxima aventura en la tierra de lagos y volcanes."
     />
-    <meta property="og:image" content="./Assets/Img/collageNicaragua.png" />
-    <meta property="og:url" content="https://nicapage.netlify.app/" />
+    <meta property="og:image" content="./assets/img/collageNicaragua.png" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_NI" />
 
@@ -38,17 +37,23 @@
       rel="stylesheet"
     />
 
+    <!-- JavaScript -->
+    <script src="js/main.js" type="module" defer></script>
+
     <!-- CSS Preload -->
     <link
       rel="preload"
-      href="Css/style.css"
+      href="css/style.css"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
-    <noscript><link rel="stylesheet" href="Css/style.css" /></noscript>
+    <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
 
     <!-- Favicon -->
-    <link rel="icon" href="Assets/Svg/favicon.svg" type="image/x-icon" />
+    <link rel="icon" href="assets/favicon/favicon.png" type="image/png" />
 
     <!-- Page Title -->
     <title>NicaPage - Descubre Nicaragua</title>
@@ -65,9 +70,15 @@
       <nav class="navbar" aria-label="Navegación principal">
         <!-- Logo -->
         <a href="index.html" class="navbar-logo">
-          <svg width="32" height="32" viewBox="0 0 1000 893" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M558.8 808.8l-10.4-6-15.7-5.4-24.6-9.1-9-3.8-16.4-6.1-7.5-6.8 43.9-90.6 3.3-5.7 0.5-0.6 0.8-0.7 2.8-1.4 3.7-2.6 1.6-0.9 1.2-0.5 0.9 0.3 0.4 0.2 0.9-0.1 3.4-1.3 1.1-0.7 0.6-0.4 0.6-1.1 0.9-1.1 1.3-1.4 0.2-0.3 0.2-0.4 0.3-0.4 0.7-0.9 0.4-0.5 0.2-0.8 0-0.2 0.5-1.2 2.7-4.3 7.9-1.7 4.6-3 12.1-11.2 0.6-0.9 0.8-0.3 1-0.1 13.5 0.1 3.7-0.6 0.8 0 1.6 0.4 0.7 0.1 2.8-0.3 0.6 0.1 0.7 0.1 0.9 0.4 2 0.4 7.1 0.3 3.7 12.9 2.7 5 1.5 1.3 1.2 1.2 0.4 1.2-0.2 2.3 0.3 4.8 1.9 4.8 1.9 5.8-0.1 1.6-0.3 2-1.8 4.3-2.6 9-0.6 3.6 0 2.5 1.3 7.2 0.7 7.2 12.2 4.5 5.3 3.3 14.6 9.1 2.8 2.9 1.1 2.5 0.2 2.3 0.3 2.4 1.4 2.9 1.7 1.7 1.7 1.2 8.6 4.5 7.2 5.2 5.2 5.2 1.6 2.1 3.7 6.2 1 1.1 0.7 0.5 0.6 0 0.6 0.1 0.7 0.3 1.2 0.7 0.5 0.2 1 0.3 1.4 0.5 0.5 0.1 0.5 0 1.8-0.2 1.2 0 0.5 0 1.2 0.3 3 1.2 2.3 0.8 5.8-0.8 1.2 0.1 0.6 0.4-0.2 1 0 0.6 0.1 0.4 0.2 0.4 2 2.1 1.8 1.5 1 0.5 0.7 0.1 1.6-0.8 1.2-0.3 0.4-0.1 0.8-0.5 0.4-0.3 0.9-0.5 0.7-0.2 1.3-0.3 1.1 0.2 1.8 0.7 0.8 0.1 0.7 0 0.4-0.3 0.5-0.1 0.4-0.2 0.4-0.3 1.5-0.6 1.7-0.2 0.9-0.2 2.6-1.3 0.5 0.2 0.3 0.3 0.1 0.6-0.3 3.4 0 0.6 0.2 1 0.2 0.5 0.6 0.8 0.6 0.6 0.3 0.4 0.2 0.4 0 0.6 0.1 1.2 0.1 0.7 0.3 0.8 0.8 0.9 0.6 0.4 0.6 0 0.4-0.2 0.4-0.2 0.4-0.3 1.3 0 2.1 0.2 7.2 1.4 1.4 0.4 0.4 0.3 0.6 0.6 3.4 4.4 2.6 4.4 4.8 5.1 3.1 2.5 1.5 4 3.2-0.6-0.7-2 1.4 0.4 1.5 3.2 0.4 0.2 0.3 1.1-0.5 2.5 1.8 1 0.1 4.1 1.7 6.6-0.5 5.1-6.5 3.3-12 2.9-1 0.2-12.1 4.6-3.8 4.5-0.7 0.4-5-1-1.2 0.4-2.6 1.8-1.7 0.3-1.8-0.2-1.2-0.6-11-8.8-0.9-3.2-2-1.4-2.5 0.5-2.1 2.1-3.2-0.7-4.5 2.9-2.2-2.2-1.3 0-2.1 1.6-2.1-0.8-3.4-3.3-2.2 0.4-1.6-0.3-1.3-0.2-2.9 0-2 1.5-1-1.3-4-3.2-0.4-0.7-0.8-0.8-0.3-1 0.8-1.5 0.7-0.5 2.6-1.3-0.7-4.5-3.2-2.7-3.5-1.8-1.6-1.8-1.9-1.3-8.6-3.3-1.9-1.8-0.5-1.3-2.4-3.1-0.9-1.4-0.3-2.3 0-1.9-0.4-1.4-1.8-0.9-1.5 1-9.9 6.4-1.7 0.8-2-0.2-2-0.8-1.6-0.9-1.6-1.4-4.2-5.2-0.7-0.5-0.9-0.5-1-0.4-1-0.3-9.1-4-4.2-1.4-4 0.2-3.2-0.4-6.9-5.1-3.3-1.4-5.7 1.4-13.6 9-18.9 12.5z"/>
-          </svg>
+          <!-- Img -->
+          <img
+            src="./assets/img/favicon.png"
+            alt="logo de nicaragua"
+            width="32"
+            height="32"
+          />
+
+          <!-- Text -->
           <span>NicaPage</span>
         </a>
 
@@ -83,28 +94,44 @@
         <div class="navbar-menu">
           <ul class="menu-links">
             <li><a href="index.html" class="active">Inicio</a></li>
-            <li><a href="Html/turismo.html">Turismo</a></li>
-            <li><a href="Html/gastronomia.html">Gastronomía</a></li>
-            <li><a href="Html/historia-curiosidades.html">Historia</a></li>
-            <li><a href="Html/cultura-festividades.html">Cultura</a></li>
-            <li><a href="Html/naturaleza-aventura.html">Naturaleza</a></li>
+            <li><a href="html/turismo.html">Turismo</a></li>
+            <li><a href="html/gastronomia.html">Gastronomía</a></li>
+            <li><a href="html/historia-curiosidades.html">Historia</a></li>
+            <li><a href="html/cultura-festividades.html">Cultura</a></li>
+            <li><a href="html/naturaleza-aventura.html">Naturaleza</a></li>
           </ul>
-          
+
           <!-- Theme Toggle -->
-          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Cambiar tema"
+          >
+            <svg
+              class="sun-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
             </svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            <svg
+              class="moon-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
           </button>
         </div>
@@ -115,24 +142,39 @@
     <main id="main-content">
       <!-- Hero Section -->
       <section class="hero" aria-labelledby="hero-title">
+        <!-- Hero -->
         <div class="hero-content">
+          <!-- Title -->
           <h1 id="hero-title">Descubre Nicaragua</h1>
+
+          <!-- Description -->
           <p>
-            La tierra de lagos y volcanes te espera. Un país lleno de historia, 
+            La tierra de lagos y volcanes te espera. Un país lleno de historia,
             cultura, playas paradisíacas y una gastronomía que te enamorará.
           </p>
+
+          <!-- Buttons -->
           <div class="hero-buttons">
-            <a href="Html/turismo.html" class="btn btn-secondary">
+            <!-- Link -->
+            <a href="html/turismo.html" class="btn btn-secondary">
               Explorar Destinos
             </a>
-            <a href="#conoce" class="btn btn-outline" style="border-color: white; color: white;">
+
+            <!-- Link -->
+            <a
+              href="#conoce"
+              class="btn btn-outline"
+              style="border-color: white; color: white"
+            >
               Conocer Más
             </a>
           </div>
         </div>
+
+        <!-- Img -->
         <div class="hero-image">
           <img
-            src="Assets/Img/collageNicaragua.png"
+            src="assets/img/collage-nicaragua.png"
             alt="Collage de paisajes hermosos de Nicaragua incluyendo volcanes, playas y ciudades coloniales"
             width="600"
             height="400"
@@ -142,17 +184,27 @@
       </section>
 
       <!-- Conoce Nicaragua (Video) -->
-      <section id="conoce" class="section video-section" aria-labelledby="video-title">
+      <section
+        id="conoce"
+        class="section video-section"
+        aria-labelledby="video-title"
+      >
+        <!-- Container Text -->
         <div class="container-text">
+          <!-- Title -->
           <h2 id="video-title">Conoce Nicaragua a través de un video</h2>
+
+          <!-- Description -->
           <p>
-            Déjate cautivar por la belleza de nuestros paisajes, la calidez de 
+            Déjate cautivar por la belleza de nuestros paisajes, la calidez de
             nuestra gente y la riqueza de nuestra cultura.
           </p>
         </div>
+
+        <!-- Video -->
         <div class="video-container">
           <video
-            src="./Assets/Video/nicaraguaVideo.mp4"
+            src="./assets/video/nicaragua-video.mp4"
             loading="lazy"
             muted
             autoplay
@@ -160,12 +212,6 @@
             playsinline
             aria-label="Video promocional de Nicaragua"
           >
-            <track
-              kind="captions"
-              src="Assets/Video/Nicaragua Video.vtt"
-              srclang="es"
-              label="Español"
-            />
             Tu navegador no soporta el elemento de video.
           </video>
         </div>
@@ -173,65 +219,97 @@
 
       <!-- Destinos Destacados -->
       <section class="section section-dark" aria-labelledby="destinos-title">
+        <!-- Container -->
         <div class="container">
+          <!-- Container Text -->
           <div class="container-text">
+            <!-- Title -->
             <h2 id="destinos-title">Destinos Destacados</h2>
+
+            <!-- Description -->
             <p>
-              Desde playas de arena blanca hasta volcanes activos, Nicaragua 
+              Desde playas de arena blanca hasta volcanes activos, Nicaragua
               ofrece experiencias únicas para cada tipo de viajero.
             </p>
           </div>
+
+          <!-- Cards -->
           <div class="cards">
+            <!-- Card 1 -->
             <article class="card animate-on-scroll">
+              <!-- Container Img -->
               <div class="card-image">
                 <img
-                  src="Assets/Img/granada.png"
+                  src="assets/destinos/granada.png"
                   alt="Vista de la ciudad colonial de Granada con su catedral amarilla"
                   width="400"
                   height="250"
                   loading="lazy"
                 />
               </div>
+
+              <!-- Container Content -->
               <div class="card-content">
+                <!-- Title -->
                 <h3>Granada</h3>
+
+                <!-- Description -->
                 <p>
-                  Una de las ciudades coloniales más hermosas de América, fundada 
-                  en 1524. Disfruta de su arquitectura, las Isletas y el Volcán Mombacho.
+                  Una de las ciudades coloniales más hermosas de América,
+                  fundada en 1524. Disfruta de su arquitectura, las Isletas y el
+                  Volcán Mombacho.
                 </p>
               </div>
             </article>
+
+            <!-- Card 2 -->
             <article class="card animate-on-scroll animate-delay-1">
+              <!-- Container Img -->
               <div class="card-image">
                 <img
-                  src="Assets/Img/sanJuan.png"
+                  src="assets/destinos/san-juan.png"
                   alt="Playa de San Juan del Sur con el Cristo de la Misericordia al fondo"
                   width="400"
                   height="250"
                   loading="lazy"
                 />
               </div>
+
+              <!-- Container Content -->
               <div class="card-content">
+                <!-- Title -->
                 <h3>San Juan del Sur</h3>
+
+                <!-- Description -->
                 <p>
-                  El paraíso surfista de Nicaragua. Playas vírgenes, vida nocturna 
-                  y el famoso Cristo de la Misericordia vigilando la bahía.
+                  El paraíso surfista de Nicaragua. Playas vírgenes, vida
+                  nocturna y el famoso Cristo de la Misericordia vigilando la
+                  bahía.
                 </p>
               </div>
             </article>
+
+            <!-- Card 3 -->
             <article class="card animate-on-scroll animate-delay-2">
+              <!-- Container Img -->
               <div class="card-image">
                 <img
-                  src="Assets/Img/leon.png"
+                  src="assets/destinos/leon.png"
                   alt="Catedral de León, Patrimonio de la Humanidad"
                   width="400"
                   height="250"
                   loading="lazy"
                 />
               </div>
+
+              <!-- Container Content -->
               <div class="card-content">
+                <!-- Title -->
                 <h3>León</h3>
+
+                <!-- Description -->
                 <p>
-                  Capital cultural de Nicaragua. Su catedral es Patrimonio de la 
+                  Capital cultural de Nicaragua. Su catedral es Patrimonio de la
                   Humanidad y cerca se encuentra el Volcán Cerro Negro.
                 </p>
               </div>
@@ -242,72 +320,107 @@
 
       <!-- Gastronomía Preview -->
       <section class="section" aria-labelledby="gastronomia-title">
+        <!-- Container -->
         <div class="container">
+          <!-- Container Text -->
           <div class="container-text">
+            <!-- Title -->
             <h2 id="gastronomia-title">Sabores de Nicaragua</h2>
+
+            <!-- Description -->
             <p>
-              La gastronomía nicaragüense es una fusión de influencias indígenas, 
-              españolas y africanas que crea sabores únicos e inolvidables.
+              La gastronomía nicaragüense es una fusión de influencias
+              indígenas, españolas y africanas que crea sabores únicos e
+              inolvidables.
             </p>
           </div>
+
+          <!-- Cards -->
           <div class="cards">
+            <!-- Card 1 -->
             <article class="card animate-on-scroll">
+              <!-- Container Img -->
               <div class="card-image">
                 <img
-                  src="Assets/Img/GalloPinto.png"
+                  src="assets/gastronomia/gallo-pinto.png"
                   alt="Plato de Gallo Pinto, el plato nacional de Nicaragua"
                   width="400"
                   height="250"
                   loading="lazy"
                 />
               </div>
+
+              <!-- Container Content -->
               <div class="card-content">
+                <!-- Title -->
                 <h3>Gallo Pinto</h3>
+
+                <!-- Description -->
                 <p>
-                  El desayzo nacional. Arroz con frijoles, servido con aguacate, 
-                  huevo y tortillas. Una tradición que une a toda la familia.
+                  El desayuno nacional. Arroz con frijoles, servido con
+                  aguacate, huevo y tortillas. Una tradición que une a toda la
+                  familia.
                 </p>
               </div>
             </article>
+
+            <!-- Card 2 -->
             <article class="card animate-on-scroll animate-delay-1">
+              <!-- Container Img -->
               <div class="card-image">
                 <img
-                  src="Assets/Img/Vigoron.png"
+                  src="assets/gastronomia/vigoron.png"
                   alt="Plato de Vigorón con yuca, chicharrón y ensalada"
                   width="400"
                   height="250"
                   loading="lazy"
                 />
               </div>
+
+              <!-- Container Content -->
               <div class="card-content">
+                <!-- Title -->
                 <h3>Vigorón</h3>
+
+                <!-- Description -->
                 <p>
-                  Yuca hervida con chicharrón y ensalada de repollo. Un bocadillo 
-                  típico de Granada que te dará energía para tus aventuras.
+                  Yuca hervida con chicharrón y ensalada de repollo. Un
+                  bocadillo típico de Granada que te dará energía para tus
+                  aventuras.
                 </p>
               </div>
             </article>
+
+            <!-- Card 3 -->
             <article class="card animate-on-scroll animate-delay-2">
+              <!-- Container Img -->
               <div class="card-image">
                 <img
-                  src="Assets/Img/Nacatamal.png"
+                  src="assets/gastronomia/nacatamal.png"
                   alt="Nacatamal envuelto en hoja de plátano"
                   width="400"
                   height="250"
                   loading="lazy"
                 />
               </div>
+
+              <!-- ContainerContent -->
               <div class="card-content">
+                <!-- Title -->
                 <h3>Nacatamal</h3>
+
+                <!-- Description -->
                 <p>
-                  El rey de los fines de semana. Masa de maíz rellena de carne, 
+                  El rey de los fines de semana. Masa de maíz rellena de carne,
                   arroz, papa y más, envuelta en hoja de plátano.
                 </p>
               </div>
             </article>
           </div>
+
+          <!-- Link -->
           <div class="show-more-container">
-            <a href="Html/gastronomia.html" class="btn btn-primary">
+            <a href="html/gastronomia.html" class="btn btn-secondary">
               Ver Toda la Gastronomía
             </a>
           </div>
@@ -315,21 +428,31 @@
       </section>
 
       <!-- Call to Action -->
-      <section class="section section-primary" aria-labelledby="cta-title">
+      <section class="section section-dark" aria-labelledby="cta-title">
+        <!-- Container -->
         <div class="container">
+          <!-- Container Text -->
           <div class="container-text">
+            <!-- Title -->
             <h2 id="cta-title">¿Listo para descubrir Nicaragua?</h2>
+
+            <!-- Description -->
             <p>
-              Explora nuestra completa guía de turismo, conoce la historia de 
-              nuestro pueblo y déjate sorprender por las curiosidades de este 
+              Explora nuestra completa guía de turismo, conoce la historia de
+              nuestro pueblo y déjate sorprender por las curiosidades de este
               país único en el mundo.
             </p>
           </div>
-          <div class="hero-buttons" style="justify-content: center;">
-            <a href="Html/turismo.html" class="btn btn-secondary">
+
+          <!-- Hero Buttons -->
+          <div class="hero-buttons" style="justify-content: center">
+            <!-- Link Turismo -->
+            <a href="html/turismo.html" class="btn btn-secondary">
               Ver Turismo
             </a>
-            <a href="Html/historia.html" class="btn btn-outline" style="border-color: white; color: white;">
+
+            <!-- Link Historia -->
+            <a href="html/historia.html" class="btn btn-primary">
               Conocer Historia
             </a>
           </div>
@@ -339,66 +462,130 @@
 
     <!-- Footer -->
     <footer class="footer" aria-label="Pie de página">
+      <!-- Container -->
       <div class="container">
+        <!-- Footer Top -->
         <div class="footer-top">
           <!-- Brand -->
           <div class="footer-brand">
+            <!-- Logo -->
             <div class="footer-brand-logo">NicaPage</div>
+
+            <!-- Text -->
             <p>
-              Tu guía completa para descubrir la belleza, historia y cultura 
-              de Nicaragua. La tierra de lagos y volcanes.
+              Tu guía completa para descubrir la belleza, historia y cultura de
+              Nicaragua. La tierra de lagos y volcanes.
             </p>
+
+            <!-- Links -->
             <div class="footer-social">
-              <a href="https://www.facebook.com/14BryanSaenz" target="_blank" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
+              <!-- GitHub -->
+              <a
+                href="https://github.com/14bryanespinoza"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <img src="assets/social/github.png" alt="enlace a github" />
               </a>
-              <a href="https://twitter.com/14BryanSaenz" target="_blank" aria-label="Twitter/X">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
+
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/14bryaespinoza/"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <img src="assets/social/linkedin.png" alt="enlace a linkedIn" />
               </a>
-              <a href="https://www.linkedin.com/in/14bryansaenz/" target="_blank" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
+
+              <!-- Twitter -->
+              <a
+                href="https://twitter.com/14bryanespinoza"
+                target="_blank"
+                aria-label="Twitter/X"
+              >
+                <img src="assets/social/twitter.png" alt="enlace a twitter" />
               </a>
-              <a href="https://github.com/Bryan14Saenz" target="_blank" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                </svg>
+
+              <!-- Facebook -->
+              <a
+                href="https://www.facebook.com/14bryanespinoza"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <img src="assets/social/facebook.png" alt="enlace a facebook" />
               </a>
             </div>
           </div>
 
           <!-- Links -->
           <div class="footer-links">
+            <!-- Container -->
             <div class="footer-column">
+              <!-- Title -->
               <h3>Explorar</h3>
+
+              <!-- Links -->
               <ul>
-                <li><a href="Html/turismo.html">Turismo</a></li>
-                <li><a href="Html/gastronomia.html">Gastronomía</a></li>
-                <li><a href="Html/historia-curiosidades.html">Historia</a></li>
-                <li><a href="Html/cultura-festividades.html">Cultura</a></li>
-                <li><a href="Html/naturaleza-aventura.html">Naturaleza</a></li>
+                <li><a href="html/turismo.html">Turismo</a></li>
+                <li><a href="html/gastronomia.html">Gastronomía</a></li>
+                <li><a href="html/historia-curiosidades.html">Historia</a></li>
+                <li><a href="html/cultura-festividades.html">Cultura</a></li>
+                <li><a href="html/historia.html">Naturaleza</a></li>
               </ul>
             </div>
+
+            <!-- Container -->
             <div class="footer-column">
+              <!-- Title -->
               <h3>Destinos</h3>
+
+              <!-- Links -->
               <ul>
-                <li><a href="Html/turismo.html#granada">Granada</a></li>
-                <li><a href="Html/turismo.html#san-juan">San Juan del Sur</a></li>
-                <li><a href="Html/turismo.html#leon">León</a></li>
-                <li><a href="Html/turismo.html#ometepe">Ometepe</a></li>
+                <li><a href="html/turismo.html#granada">Granada</a></li>
+                <li>
+                  <a href="html/turismo.html#san-juan">San Juan del Sur</a>
+                </li>
+                <li><a href="html/turismo.html#leon">León</a></li>
+                <li><a href="html/turismo.html#ometepe">Ometepe</a></li>
               </ul>
             </div>
+
+            <!-- Container -->
             <div class="footer-column">
+              <!-- Title -->
               <h3>Contacto</h3>
+
+              <!-- Links -->
               <ul>
-                <li><a href="mailto:14bryansaenz@gmail.com">Envíanos un correo</a></li>
-                <li><a href="https://www.facebook.com/14BryanSaenz" target="_blank">Facebook</a></li>
-                <li><a href="https://twitter.com/14BryanSaenz" target="_blank">Twitter</a></li>
+                <!-- Mail -->
+                <li>
+                  <a href="mailto:14bryespinoza@gmail.co">Envíanos un correo</a>
+                </li>
+
+                <!-- Facebook -->
+                <li>
+                  <a
+                    href="https://www.facebook.com/14bryanespinoza"
+                    target="_blank"
+                    >Facebook</a
+                  >
+                </li>
+
+                <!-- Twitter -->
+                <li>
+                  <a href="https://twitter.com/14bryanespinoza" target="_blank"
+                    >Twitter</a
+                  >
+                </li>
+
+                <!-- LinkedIn -->
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/14bryaespinoza/"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -406,6 +593,7 @@
 
         <!-- Footer Bottom -->
         <div class="footer-bottom">
+          <!-- Legals Links -->
           <nav aria-label="Enlaces legales">
             <ul>
               <li><a href="#">Términos</a></li>
@@ -413,12 +601,11 @@
               <li><a href="#">Cookies</a></li>
             </ul>
           </nav>
-          <span>Desarrollado por <strong>Bryan14Saenz</strong> &copy; 2026</span>
+
+          <!-- Copyright -->
+          <span>&copy; 14BryanEspinoza - 2026</span>
         </div>
       </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="js/main.js" defer></script>
   </body>
 </html>
