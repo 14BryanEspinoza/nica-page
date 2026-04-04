@@ -310,7 +310,7 @@ header {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  border: 2px solid;
+  border: 1px solid;
   color: var(--text-primary);
   background-color: transparent;
 }
@@ -447,7 +447,7 @@ main {
 /* Cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-md);
 }
 
@@ -500,30 +500,30 @@ main {
 
 /* City Cards (Turismo) */
 .city-card {
+  overflow: hidden;
   position: relative;
   min-height: 320px;
+  border-radius: var(--radius-lg);
   background-size: cover;
   background-position: center;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
 }
 
 .city-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0) 100%);
 }
 
 .city-card-content {
+  transform: translateY(60%);
+  transition: transform var(--transition);
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: var(--space-lg);
-  color: var(white);
-  transform: translateY(60%);
-  transition: transform var(--transition-base);
+  color: #ffffff;
 }
 
 .city-card:hover .city-card-content {
@@ -531,7 +531,7 @@ main {
 }
 
 .city-card-content h3 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   margin-bottom: var(--space-sm);
 }
 
@@ -540,50 +540,54 @@ main {
 }
 
 .city-card-content li {
+  transform: translateX(-10px);
+  transition: all var(--transition);
   font-size: var(--font-size-sm);
   margin-bottom: var(--space-xs);
   opacity: 0;
-  transform: translateX(-10px);
-  transition: all var(--transition-base);
 }
 
 .city-card:hover .city-card-content li {
-  opacity: 1;
   transform: translateX(0);
+  opacity: 1;
 }
 
 .city-card-content li:nth-child(1) {
   transition-delay: 0.05s;
 }
+
 .city-card-content li:nth-child(2) {
   transition-delay: 0.1s;
 }
+
 .city-card-content li:nth-child(3) {
   transition-delay: 0.15s;
 }
+
 .city-card-content li:nth-child(4) {
   transition-delay: 0.2s;
 }
 
 .city-card-content li a {
-  color: var(white);
   text-decoration: underline;
+  transition: var(--transition);
+  color: #ffffff;
 }
 
 .city-card-content li a:hover {
-  color: var(--accent);
+  color: var(--accent-hover);
 }
 
 .city-card .btn {
-  opacity: 0;
   transform: translateY(10px);
-  transition: all var(--transition-base);
+  transition: all var(--transition);
   transition-delay: 0.25s;
+  opacity: 0;
 }
 
 .city-card:hover .btn {
-  opacity: 1;
   transform: translateY(0);
+  opacity: 1;
 }
 
 /* Food Cards (Gastronomía) */
@@ -885,20 +889,19 @@ main {
 
 /* Page Header (for inner pages) */
 .page-header {
-  background: linear-gradient(135deg, var(--primary) 0%, #0066cc 100%);
-  color: var(white);
-  padding: var(--space-2xl) var(--space-md);
   text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  color: var(--text-primary);
 }
 
 .page-header h1 {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   margin-bottom: var(--space-sm);
 }
 
 .page-header p {
-  font-size: var(--font-size-md);
-  opacity: 0.9;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
 }
 
 /* Show More Button */
@@ -974,7 +977,7 @@ main {
   }
 
   .page-header h1 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
   }
 }
 

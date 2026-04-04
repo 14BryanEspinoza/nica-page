@@ -1,87 +1,75 @@
-# 🇳🇮 NicaPage
+# NicaPage - Guía Turística de Nicaragua
 
-**NicaPage** es un sitio web informativo e interactivo que celebra la riqueza cultural, turística e histórica de Nicaragua. Está diseñado como una versión moderna del proyecto *Nicaragua Conócenos*, con mejoras en estructura, accesibilidad y estética.
+Sitio web informativo sobre la riqueza cultural, turística e histórica de Nicaragua. Proyecto desarrollado con HTML5, CSS3 y vanilla JavaScript, inspirado en el proyecto "Nicaragua Conócenos".
 
----
+## Descripción
 
-## 📌 Descripción
+NicaPage es un sitio web multipágina que permite a los usuarios explorar diferentes aspectos de Nicaragua: historia, gastronomía, lugares turísticos, cultura y naturaleza. Cuenta con navegación fluida, diseño adaptable (mobile-first), theme toggle y contenido multimedia.
 
-Este sitio permite a los usuarios conocer distintos aspectos de Nicaragua: su historia, gastronomía, lugares turísticos y curiosidades. Cuenta con una navegación fluida, diseño adaptable y contenido multimedia enriquecido como imágenes y video.
+## Tecnologías
 
-Ideal para personas interesadas en aprender sobre Nicaragua o desarrolladores que desean ver una buena práctica de maquetación web.
+- **HTML5** — estructura semántica (`header`, `main`, `footer`, `nav`, `section`) con comentarios estructurales detallados
+- **CSS3** — estilos puros sin pre-procesadores
+- **CSS Custom Properties** — variables para colores, tipografía, espaciado y sombras
+- **CSS-only hamburger menu** — navegación móvil sin JavaScript usando checkbox hack
+- **SVG icons** — iconos vectoriales inline para mejor rendimiento
+- **JavaScript (ES6+)** — interacciones, theme toggle y animations
 
----
+## Características
 
-## 🧩 Tecnologías utilizadas
+- **Diseño responsive** — mobile-first, adaptado para mobile (< 768px), tablet (768px+) y desktop (1024px+)
+- **Theme toggle** — modo claro/oscuro con persistencia en localStorage
+- **Navegación accesible** — skip link, `aria-label`, `aria-labelledby`, menú keyboard-navigable
+- **SEO básico** — meta tags, Open Graph, sitemap
+- **Performance** — CSS preload, carga diferida de imágenes (`loading="lazy"`)
+- **Animaciones CSS** — efectos de fade-in y transitions suaves
+- **Acordeón nativo** — FAQs y secciones expansibles con `<details>`/`<summary>`
 
-- HTML5 (semántico)
-- CSS3 (layout, estilos y responsive design)
-- Multimedia (video, íconos en base64, imágenes locales)
-- SEO básico (uso de metadatos, OG tags)
+## Estructura del proyecto
 
----
-
-## 🧭 Estructura del sitio
-
-- **Inicio**: bienvenida con imagen representativa y mensaje introductorio.
-- **Navbar**: navegación responsive con enlaces a secciones internas del sitio.
-- **Conocenos**: sección con video promocional sobre Nicaragua.
-- **Turismo**: sección con tarjetas sobe los lugares mas visitados de Nic.
-- **Gastronomia**: sección que mustra los platos mas gustados de Nic
-- **Historia**: informate sobre los acontecimientos mas importantes del pais.
-- Curiosidades**: sección sobre algunos datos curiosos de Nic.
-- **Footer**: información de contacto, redes sociales y autor del sitio.
-
----
-
-## 📂 Estructura del proyecto
-
-```bash
+```
 .
-├── index.html
-├── Html/
+├── index.html              # Página principal
+├── html/
 │   ├── turismo.html
 │   ├── gastronomia.html
 │   ├── historia.html
+│   ├── historia-curiosidades.html
+│   ├── cultura-festividades.html
+│   ├── naturaleza-aventura.html
 │   └── curiosidades.html
-├── Css/
+├── css/
 │   └── style.css
-├── Assets/
-│   ├── Img/
-│   │   └── CollageNicaragua.png
-│   ├── Video/
-│   │   └── nicaraguaVideo.mp4
-│   ├── video/
-│   │   └── Nicaragua Video.vtt
-│   └── Svg/
-│       └── favicon.svg
+├── js/
+│   └── main.js
+├── assets/
+│   ├── favicon/
+│   ├── img/
+│   ├── social/
+│   └── video/
+└── README.md
 ```
 
----
+## Páginas del sitio
 
-## 🛠️ En desarrollo
+1. **Inicio** — hero con video, secciones informativas sobre Nicaragua
+2. **Turismo** — destinos turísticos con tarjetas (Granada, León, Managua, etc.)
+3. **Gastronomía** — platos típicos, bebidas y tradiciones culinarias
+4. **Historia** — línea temporal de Nicaragua desde la época precolombina
+5. **Historia y Curiosidades** — historia + datos curiosos fascinantes
+6. **Cultura y Festividades** — tradiciones, bailes típicos y celebraciones
+7. **Naturaleza y Aventura** — flora, fauna, áreas protegidas y deportes extremos
 
-- [ ] Agregar accesibilidad y etiquetas ARIA
-- [ ] Optimización del rendimiento y carga diferida
-- [ ] Añadir más interacciones con JavaScript
-- [ ] Preparar despliegue completo con hosting gratuito (Netlify/GitHub Pages)
+## Cómo ver el proyecto
 
----
+No requiere instalación ni build. Abrir `index.html` directamente en el navegador.
 
-## 🧑‍💻 Autor
+- Opción 1: Abrir localmente el archivo `index.html`
+- Opción 2: [Ver en Netlify](https://nicapage.netlify.app)
+
+## Autor
 
 **Bryan14Saenz**
 
-> “Programa no para resolver problemas, sino para crear soluciones.”
-
-📧 Correo: [14bryansaenz@gmail.com](mailto:14bryansaenz@gmail.com)  
-🌐 GitHub: [github.com/Bryan14Saenz](https://github.com/Bryan14Saenz)  
-🔗 LinkedIn: [linkedin.com/in/14bryansaenz](https://www.linkedin.com/in/14bryansaenz)  
-📘 Facebook: [facebook.com/14BryanSaenz](https://www.facebook.com/14BryanSaenz)  
-🐦 Twitter: [twitter.com/14BryanSaenz](https://twitter.com/14BryanSaenz)
-
----
-
-## 🌍 Demo en línea
-
-🟢 [nicapage.netlify.app](https://nicapage.netlify.app)
+- GitHub: [@Bryan14Saenz](https://github.com/Bryan14Saenz)
+- Correo: 14bryansaenz@gmail.com
