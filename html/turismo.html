@@ -1,0 +1,770 @@
+<!doctype html>
+<!-- Lang: Spanish -->
+<html lang="es">
+  <!-- Head -->
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Explora Nicaragua con NicaPage: guía completa de turismo, gastronomía, historia, cultura y naturaleza. Descubre playas, volcanes, ciudades coloniales y tradiciones locales para planificar tu próxima aventura en la tierra de lagos y volcanes."
+    />
+    <meta
+      name="keywords"
+      content="Nicaragua, Turismo, Gastronomía, Historia, Cultura, Managua, Granada, León, San Juan del Sur"
+    />
+    <meta name="author" content="14BryanEspinoza" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="NicaPage - Descubre Nicaragua" />
+    <meta
+      property="og:description"
+      content="Explora Nicaragua con NicaPage: guía completa de turismo, gastronomía, historia, cultura y naturaleza. Descubre playas, volcanes, ciudades coloniales y tradiciones locales para planificar tu próxima aventura en la tierra de lagos y volcanes."
+    />
+    <meta property="og:image" content="../assets/img/collage-nicaragua.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_NI" />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JavaScript -->
+    <script src="../js/main.js" type="module" defer></script>
+
+    <!-- CSS Preload -->
+    <link
+      rel="preload"
+      href="../css/style.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="../css/style.css" /></noscript>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon/favicon.png" type="image/png" />
+
+    <!-- Page Title -->
+    <title>Turismo - NicaPage</title>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header -->
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar" aria-label="Navegación principal">
+        <!-- Logo -->
+        <a href="../index.html" class="navbar-logo">
+          <!-- Img -->
+          <img
+            src="../assets/favicon/favicon.png"
+            alt="logo de Nicaragua"
+            width="32"
+            height="32"
+          />
+
+          <!-- Text -->
+          <span>NicaPage</span>
+        </a>
+
+        <!-- Menu Toggle (Mobile) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="hamburger" aria-label="Menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <!-- Menu Links -->
+        <div class="navbar-menu">
+          <ul class="menu-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="turismo.html" class="active">Turismo</a></li>
+            <li><a href="gastronomia.html">Gastronomía</a></li>
+            <li><a href="historia-curiosidades.html">Historia</a></li>
+            <li><a href="cultura-festividades.html">Cultura</a></li>
+            <li><a href="naturaleza-aventura.html">Naturaleza</a></li>
+          </ul>
+
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Cambiar tema"
+          >
+            <svg
+              class="sun-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg
+              class="moon-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Page Header -->
+      <section class="page-header" aria-labelledby="page-title">
+        <h1 id="page-title">Turismo en Nicaragua</h1>
+        <p>
+          Descubre los destinos más hermosos de la tierra de lagos y volcanes
+        </p>
+      </section>
+
+      <!-- Destinos Section -->
+      <section class="section" aria-labelledby="destinos-title">
+        <div class="container">
+          <div class="container-text">
+            <h2 id="destinos-title">Lugares que debes conocer</h2>
+            <p>
+              Nicaragua ofrece una gran variedad de destinos turísticos, desde
+              playas paradisíacas hasta ciudades coloniales llenas de historia.
+            </p>
+          </div>
+
+          <!-- Cities Grid -->
+          <div class="cards">
+            <!-- Granada -->
+            <article
+              id="granada"
+              class="city-card animate-on-scroll"
+              style="
+                background-image: url(&quot;../assets/img/granada.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Granada</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Tourism-g7380409-Isletas_de_Granada_Granada_Granada_Department-Vacations.html"
+                      target="_blank"
+                      >Isletas de Granada</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.co/ShowUserReviews-g580113-d5035105-r737306632-Catedral_De_Granada_2024-Granada_Granada_Department.html"
+                      target="_blank"
+                      >Catedral</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.alltrails.com/es/ruta/nicaragua/granada/volcan-mombacho"
+                      target="_blank"
+                      >Volcán Mombacho</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- San Juan del Sur -->
+            <article
+              id="san-juan"
+              class="city-card animate-on-scroll animate-delay-1"
+              style="
+                background-image: url(&quot;../assets/img/sanJuan.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>San Juan del Sur</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attractions-g528745-Activities-c61-t52-San_Juan_del_Sur_Rivas_Department.html"
+                      target="_blank"
+                      >Playas</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g528745-d5889584-Reviews-Mirador_del_Cristo_de_la_Misericordia-San_Juan_del_Sur_Rivas_Department.html"
+                      target="_blank"
+                      >Cristo de la Misericordia</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attractions-g528745-Activities-c20-San_Juan_del_Sur_Rivas_Department.html"
+                      target="_blank"
+                      >Vida Nocturna</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- León -->
+            <article
+              id="leon"
+              class="city-card animate-on-scroll animate-delay-2"
+              style="background-image: url(&quot;../assets/img/leon.png&quot;)"
+            >
+              <div class="city-card-content">
+                <h3>León</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.visitleon.info/planea-tu-visita-a-la-catedral-de-leon.html"
+                      target="_blank"
+                      >Catedral</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g424970-d2061867-Reviews-Museo_de_Arte_Fundacion_Ortiz_Gurdian-Leon_Leon_Department.html"
+                      target="_blank"
+                      >Museo De Arte</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.visitcentroamerica.com/visitar/volcan-cerro-negro/"
+                      target="_blank"
+                      >Volcán Cerro Negro</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- Managua -->
+            <article
+              id="managua"
+              class="city-card animate-on-scroll"
+              style="
+                background-image: url(&quot;../assets/img/managua.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Managua</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g294478-d6925329-Reviews-Plaza_de_la_Revolucion-Managua_Managua_Department.html"
+                      target="_blank"
+                      >Plaza de la Revolución</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g294478-d4776907-Reviews-Puerto_Salvador_Allende-Managua_Managua_Department.html"
+                      target="_blank"
+                      >Puerto Salvador Allende</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g294478-d4776902-Reviews-Loma_de_Tiscapa-Managua_Managua_Department.html"
+                      target="_blank"
+                      >Lomas de Tiscapa</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- Ometepe -->
+            <article
+              id="ometepe"
+              class="city-card animate-on-scroll animate-delay-1"
+              style="
+                background-image: url(&quot;../assets/img/ometepe.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Ometepe</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.com/SmartDeals-g304024-Isla_de_Ometepe_Rivas_Department-Hotel-Deals.html"
+                      target="_blank"
+                      >Isla De Ometepe</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://labitacora.es/la-isla-de-los-circulos-y-espirales-ometepe-centroamerica-salvaje/"
+                      target="_blank"
+                      >Petroleros</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.com/HotelHighlight-g304024-d4082053-Reviews-Hotel_Charco_Verde-Isla_de_Ometepe_Rivas_Department.html"
+                      target="_blank"
+                      >Reserva Charco Verde</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- Corn Island -->
+            <article
+              id="corn-island"
+              class="city-card animate-on-scroll animate-delay-2"
+              style="
+                background-image: url(&quot;../assets/img/cornIsland.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Corn Island</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.com.mx/SmartDeals-g612406-Little_Corn_Island_Corn_Islands_Southern_Atlantic_Autonomous_Region-Hotel-Deals.html"
+                      target="_blank"
+                      >Little Corn Island</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.com/SmartDeals-g612405-Big_Corn_Island_Corn_Islands_Southern_Atlantic_Autonomous_Region-Hotel-Deals.html"
+                      target="_blank"
+                      >Big Corn Island</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- Masaya -->
+            <article
+              id="masaya"
+              class="city-card animate-on-scroll"
+              style="
+                background-image: url(&quot;../assets/img/masaya.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Masaya</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.visitcentroamerica.com/visitar/parque-nacional-volcan-masaya/"
+                      target="_blank"
+                      >Volcán Masaya</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g551472-d12952273-Reviews-Mercado_de_Artesanias_de_Masaya-Masaya_Masaya_Department.html"
+                      target="_blank"
+                      >Mercado De Artesanías</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Tourism-g1048252-La_Laguna_de_Apoyo_Masaya_Masaya_Department-Vacations.html"
+                      target="_blank"
+                      >Laguna De Apoyo</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- Estelí -->
+            <article
+              id="esteli"
+              class="city-card animate-on-scroll animate-delay-1"
+              style="
+                background-image: url(&quot;../assets/img/esteli.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Estelí</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g1119888-d2641526-Reviews-Reserva_Natural_Miraflor-Esteli_Esteli_Department.html"
+                      target="_blank"
+                      >Reserva Natural Miraflor</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.intur.gob.ni/2018/09/07/tabaco-ciudad-heroica-de-murales/"
+                      target="_blank"
+                      >Cultura del Tabaco</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- Río San Juan -->
+            <article
+              id="rio-san-juan"
+              class="city-card animate-on-scroll animate-delay-2"
+              style="
+                background-image: url(&quot;../assets/img/rioSanJuan.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Río San Juan</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g674796-d4610914-Reviews-Fortaleza_de_La_Inmaculada_Concepcion-El_Castillo_Rio_San_Juan_Department.html"
+                      target="_blank"
+                      >Fortaleza de la Inmaculada Concepción</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g674796-d4684516-Reviews-Reserva_Biologica_Indio_Maiz-El_Castillo_Rio_San_Juan_Department.html"
+                      target="_blank"
+                      >Reserva Biológica Indio Maíz</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- Matagalpa -->
+            <article
+              id="matagalpa"
+              class="city-card animate-on-scroll"
+              style="
+                background-image: url(&quot;../assets/img/matagalpa.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Matagalpa</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g612407-d12080793-Reviews-La_Cascada_de_la_Luna-Matagalpa_Matagalpa_Department.html"
+                      target="_blank"
+                      >Cascada de la Luna</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tripadvisor.es/Attraction_Review-g612407-d8445234-Reviews-Cerro_Apante-Matagalpa_Matagalpa_Department.html"
+                      target="_blank"
+                      >Cerro Apante</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://matagalpatours.com/es/nicaragua/tour-finca-cafe-matagalpa"
+                      target="_blank"
+                      >Tours del Café</a
+                    >
+                  </li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+
+            <!-- Bluefields -->
+            <article
+              id="bluefields"
+              class="city-card animate-on-scroll animate-delay-1"
+              style="
+                background-image: url(&quot;../assets/img/bluefields.png&quot;);
+              "
+            >
+              <div class="city-card-content">
+                <h3>Bluefields</h3>
+                <ul>
+                  <li>
+                    <a
+                      href="https://vianica.com/sp/atractivo/180/laguna-de-perla"
+                      target="_blank"
+                      >Laguna De Perlas</a
+                    >
+                  </li>
+                  <li><a href="#" target="_blank">Cultura Afrocaribeña</a></li>
+                </ul>
+                <a
+                  href="https://www.intur.gob.ni/oferta-turistica/"
+                  target="_blank"
+                  class="btn btn-secondary"
+                >
+                  Ver Más
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section section-primary" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="container-text">
+            <h2 id="cta-title">¿Listo para tu aventura?</h2>
+            <p>
+              Descubre más sobre la gastronomía, historia y curiosidades de
+              Nicaragua en nuestras otras secciones.
+            </p>
+          </div>
+          <div class="hero-buttons" style="justify-content: center">
+            <a href="gastronomia.html" class="btn btn-secondary">
+              Ver Gastronomía
+            </a>
+            <a
+              href="html/historia.html"
+              class="btn btn-outline"
+              style="border-color: white; color: white"
+            >
+              Conocer Historia
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" aria-label="Pie de página">
+      <!-- Container -->
+      <div class="container">
+        <!-- Footer Tip -->
+        <div class="footer-top">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <!-- Logo -->
+            <div class="footer-brand-logo">NicaPage</div>
+
+            <!-- Text -->
+            <p>
+              Tu guía completa para descubrir la belleza, historia y cultura de
+              Nicaragua. La tierra de lagos y volcanes.
+            </p>
+
+            <!-- Links -->
+            <div class="footer-social">
+              <!-- GitHub -->
+              <a
+                href="https://github.com/14bryanespinoza"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <img src="../assets/social/github.png" alt="enlace a github" />
+              </a>
+
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/14bryaespinoza/"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <img
+                  src="../assets/social/linkedin.png"
+                  alt="enlace a linkedIn"
+                />
+              </a>
+
+              <!-- Twitter -->
+              <a
+                href="https://twitter.com/14bryanespinoza"
+                target="_blank"
+                aria-label="Twitter/X"
+              >
+                <img
+                  src="../assets/social/twitter.png"
+                  alt="enlace a twitter"
+                />
+              </a>
+
+              <!-- Facebook -->
+              <a
+                href="https://www.facebook.com/14bryanespinoza"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <img
+                  src="../assets/social/facebook.png"
+                  alt="enlace a facebook"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="footer-links">
+            <!-- Column 1 -->
+            <div class="footer-column">
+              <!-- Title -->
+              <h3>Explorar</h3>
+
+              <!-- Links -->
+              <ul>
+                <li><a href="turismo.html">Turismo</a></li>
+                <li><a href="gastronomia.html">Gastronomía</a></li>
+                <li><a href="historia-curiosidades.html">Historia</a></li>
+                <li><a href="cultura-festividades.html">Cultura</a></li>
+                <li><a href="naturaleza-aventura.html">Naturaleza</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-column">
+              <!-- Title -->
+              <h3>Destinos</h3>
+
+              <!-- Links Turismo -->
+              <ul>
+                <li><a href="turismo.html#granada">Granada</a></li>
+                <li><a href="turismo.html#san-juan">San Juan del Sur</a></li>
+                <li><a href="turismo.html#leon">León</a></li>
+                <li><a href="turismo.html#ometepe">Ometepe</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-column">
+              <!-- Title -->
+              <h3>Contacto</h3>
+
+              <!-- Links -->
+              <ul>
+                <li>
+                  <a href="mailto:14bryansaenz@gmail.com">Envíanos un correo</a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/14BryanSaenz"
+                    target="_blank"
+                    >Facebook</a
+                  >
+                </li>
+                <li>
+                  <a href="https://twitter.com/14BryanSaenz" target="_blank"
+                    >Twitter</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <!-- Legals Links -->
+          <nav aria-label="Enlaces legales">
+            <ul>
+              <li><a href="#">Términos</a></li>
+              <li><a href="#">Privacidad</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </nav>
+          <!-- Copyright -->
+          <span>&copy; 14BryanEspinoza - 2026</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
