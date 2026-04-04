@@ -48,7 +48,6 @@ Ideal para personas interesadas en aprender sobre Nicaragua o desarrolladores qu
 │   └── style.css
 ├── Assets/
 │   ├── Img/
-│   │   └── CollageNicaragua.png
 │   ├── Video/
 │   │   └── nicaraguaVideo.mp4
 │   ├── video/
@@ -59,12 +58,12 @@ Ideal para personas interesadas en aprender sobre Nicaragua o desarrolladores qu
 
 ---
 
-## 🛠️ En desarrollo
+## Cómo ver el proyecto
 
-- [ ] Agregar accesibilidad y etiquetas ARIA
-- [ ] Optimización del rendimiento y carga diferida
-- [ ] Añadir más interacciones con JavaScript
-- [ ] Preparar despliegue completo con hosting gratuito (Netlify/GitHub Pages)
+No requiere instalación ni build. Abrir `index.html` directamente en el navegador.
+
+- Opción 1: Abrir el archivo localmente.
+- Opción 2: [Ver en GitHub Pages](https://14bryanespinoza.github.io/nicapage/)
 
 ---
 
@@ -74,14 +73,10 @@ Ideal para personas interesadas en aprender sobre Nicaragua o desarrolladores qu
 
 > “Programa no para resolver problemas, sino para crear soluciones.”
 
-📧 Correo: [14bryansaenz@gmail.com](mailto:14bryansaenz@gmail.com)  
-🌐 GitHub: [github.com/Bryan14Saenz](https://github.com/Bryan14Saenz)  
-🔗 LinkedIn: [linkedin.com/in/14bryansaenz](https://www.linkedin.com/in/14bryansaenz)  
-📘 Facebook: [facebook.com/14BryanSaenz](https://www.facebook.com/14BryanSaenz)  
-🐦 Twitter: [twitter.com/14BryanSaenz](https://twitter.com/14BryanSaenz)
+📧 Correo: [14bryansaenz@gmail.com](mailto:14bryespinoza@gmail.com)  
+🌐 GitHub: [github.com/Bryan14Saenz](https://github.com/14bryanespinoza)  
+🔗 LinkedIn: [linkedin.com/in/14bryansaenz](https://www.linkedin.com/in/14bryanespinoza)  
+🐦 Twitter: [twitter.com/14BryanSaenz](https://twitter.com/14bryanespinoza)
+📘 Facebook: [facebook.com/14BryanSaenz](https://www.facebook.com/14bryanespinoza)  
 
 ---
-
-## 🌍 Demo en línea
-
-🟢 [nicapage.netlify.app](https://nicapage.netlify.app)
