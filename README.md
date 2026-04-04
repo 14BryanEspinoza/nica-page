@@ -40,36 +40,37 @@ NicaPage es un sitio web multipágina que permite a los usuarios explorar difere
 │   └── curiosidades.html
 ├── css/
 │   └── style.css
-├── js/
-│   └── main.js
-├── assets/
-│   ├── favicon/
-│   ├── img/
-│   ├── social/
-│   └── video/
-└── README.md
+├── Assets/
+│   ├── Img/
+│   ├── Video/
+│   │   └── nicaraguaVideo.mp4
+│   ├── video/
+│   │   └── Nicaragua Video.vtt
+│   └── Svg/
+│       └── favicon.svg
 ```
 
-## Páginas del sitio
-
-1. **Inicio** — hero con video, secciones informativas sobre Nicaragua
-2. **Turismo** — destinos turísticos con tarjetas (Granada, León, Managua, etc.)
-3. **Gastronomía** — platos típicos, bebidas y tradiciones culinarias
-4. **Historia** — línea temporal de Nicaragua desde la época precolombina
-5. **Historia y Curiosidades** — historia + datos curiosos fascinantes
-6. **Cultura y Festividades** — tradiciones, bailes típicos y celebraciones
-7. **Naturaleza y Aventura** — flora, fauna, áreas protegidas y deportes extremos
+---
 
 ## Cómo ver el proyecto
 
 No requiere instalación ni build. Abrir `index.html` directamente en el navegador.
 
-- Opción 1: Abrir localmente el archivo `index.html`
-- Opción 2: [Ver en Netlify](https://nicapage.netlify.app)
+- Opción 1: Abrir el archivo localmente.
+- Opción 2: [Ver en GitHub Pages](https://14bryanespinoza.github.io/nicapage/)
 
-## Autor
+---
+
+## 🧑‍💻 Autor
 
 **Bryan14Saenz**
 
-- GitHub: [@Bryan14Saenz](https://github.com/Bryan14Saenz)
-- Correo: 14bryansaenz@gmail.com
+> “Programa no para resolver problemas, sino para crear soluciones.”
+
+📧 Correo: [14bryansaenz@gmail.com](mailto:14bryespinoza@gmail.com)  
+🌐 GitHub: [github.com/Bryan14Saenz](https://github.com/14bryanespinoza)  
+🔗 LinkedIn: [linkedin.com/in/14bryansaenz](https://www.linkedin.com/in/14bryanespinoza)  
+🐦 Twitter: [twitter.com/14BryanSaenz](https://twitter.com/14bryanespinoza)
+📘 Facebook: [facebook.com/14BryanSaenz](https://www.facebook.com/14bryanespinoza)  
+
+---
