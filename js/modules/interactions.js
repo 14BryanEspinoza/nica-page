@@ -4,10 +4,9 @@ export function initTimeline() {
 
   timelineItems.forEach((item) => {
     item.addEventListener("click", () => {
-      // Cerrar otros items abiertos (opcional - remove para permitir múltiples abiertos)
-      // timelineItems.forEach(i => {
-      //   if (i !== item) i.classList.remove('active');
-      // });
+      timelineItems.forEach((i) => {
+        if (i !== item) i.classList.remove("active");
+      });
       item.classList.toggle("active");
     });
 
@@ -29,9 +28,7 @@ export function initFoodList() {
 
   foodItems.forEach((item) => {
     item.addEventListener("click", (e) => {
-      // No toggle si se hace click en un enlace dentro
-      if (e.target.tagName === "A") return;
-      item.classList.toggle("active");
+      e.currentTarget.classList.toggle("active");
     });
   });
 }
