@@ -39,8 +39,7 @@ export function initNatureList() {
 
   natureCategories.forEach((category) => {
     category.addEventListener("click", (e) => {
-      if (e.target.tagName === "A") return;
-      category.classList.toggle("active");
+      e.currentTarget.classList.toggle("active");
     });
   });
 }

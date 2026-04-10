@@ -498,50 +498,6 @@ main {
   color: var(--text-secondary);
 }
 
-/* Adventure Cards (Naturaleza y Aventura) */
-.adventure-card {
-  position: relative;
-  min-height: 320px;
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-}
-
-.adventure-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-
-.adventure-card-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-lg);
-  color: var(white);
-  transform: translateY(20%);
-  transition: transform var(--transition-base);
-}
-
-.adventure-card:hover .adventure-card-content {
-  transform: translateY(0);
-}
-
-.adventure-card-content h3 {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-sm);
-  color: var(white);
-}
-
-.adventure-card-content p {
-  font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-}
-
 /* Footer */
 .footer {
   padding: var(--space-xl) var(--space-md);
@@ -880,7 +836,7 @@ main {
   margin-bottom: var(--space-sm);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-md);
-  color: var(--primary);
+  color: var(--text-primary);
   background: var(--bg-secondary);
 }
 
@@ -1082,29 +1038,27 @@ main {
   color: var(--text-secondary);
 }
 
-/* ============================================
-   GRID DE ICONOS (Cultura)
-   ============================================ */
+/* Page Cultura */
 .culture-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--space-lg);
+  gap: var(--space-md);
   max-width: 800px;
   margin: 0 auto;
 }
 
 .culture-icon {
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: var(--space-md);
   gap: var(--space-md);
-  padding: var(--space-xl);
-  background: var(--bg-card);
   border-radius: var(--radius-xl);
   border: 2px solid var(--border);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  text-align: center;
+  background: var(--bg-card);
 }
 
 .culture-icon:hover {
@@ -1114,10 +1068,10 @@ main {
 }
 
 .culture-icon-svg {
-  width: 64px;
-  height: 64px;
+  transition: all var(--transition);
+  width: 44px;
+  height: 44px;
   color: var(--primary);
-  transition: all var(--transition-base);
 }
 
 .culture-icon:hover .culture-icon-svg {
@@ -1126,24 +1080,23 @@ main {
 }
 
 .culture-icon-title {
-  font-size: var(--font-size-md);
-  font-weight: 600;
+  font-size: var(--font-size-sm);
   color: var(--text-primary);
 }
 
 /* Modal for Culture */
 .culture-modal {
+  transition: all var(--transition);
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--transition-base);
   padding: var(--space-md);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .culture-modal.active {
@@ -1152,14 +1105,14 @@ main {
 }
 
 .culture-modal-content {
-  background: var(--bg-card);
-  border-radius: var(--radius-xl);
-  max-width: 500px;
-  width: 100%;
-  max-height: 80vh;
   overflow-y: auto;
+  transition: transform var(--transition);
   transform: scale(0.9);
-  transition: transform var(--transition-base);
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
 }
 
 .culture-modal.active .culture-modal-content {
@@ -1167,31 +1120,31 @@ main {
 }
 
 .culture-modal-header {
-  padding: var(--space-xl);
-  background: linear-gradient(135deg, var(--primary) 0%, #0066cc 100%);
-  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: var(--space-lg);
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary) 0%, #0066cc 100%);
 }
 
 .culture-modal-header h3 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   margin: 0;
 }
 
 .culture-modal-close {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
+  transition: background var(--transition);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background var(--transition-fast);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .culture-modal-close:hover {
@@ -1199,14 +1152,18 @@ main {
 }
 
 .culture-modal-body {
-  padding: var(--space-xl);
+  padding: var(--space-lg);
 }
 
 .culture-modal-body p {
-  font-size: var(--font-size-base);
-  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
   line-height: 1.8;
   margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.culture-modal-body h4 {
+  color: var(--text-primary);
 }
 
 .culture-modal-body ul {
@@ -1216,8 +1173,8 @@ main {
 
 .culture-modal-body li {
   padding: var(--space-sm) 0;
+  font-size: var(--font-size-xs);
   border-bottom: 1px solid var(--border);
-  font-size: var(--font-size-sm);
   color: var(--text-secondary);
 }
 
@@ -1225,31 +1182,29 @@ main {
   border-bottom: none;
 }
 
-/* ============================================
-   LISTAS DESPLEGABLES (Naturaleza)
-   ============================================ */
+/* Page Naturaleza */
 .nature-list {
-  max-width: 900px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
   gap: var(--space-md);
 }
 
 .nature-category {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
   overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
 }
 
 .nature-category-header {
+  transition: background var(--transition);
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: var(--space-md);
   padding: var(--space-lg);
-  cursor: pointer;
-  transition: background var(--transition-fast);
 }
 
 .nature-category-header:hover {
@@ -1257,37 +1212,37 @@ main {
 }
 
 .nature-category-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  background: var(--primary);
 }
 
 .nature-category-title {
   flex: 1;
-  font-size: var(--font-size-lg);
-  font-weight: 600;
+  font-size: var(--font-size-sm);
   color: var(--text-primary);
 }
 
 .nature-category-count {
+  display: none;
   font-size: var(--font-size-sm);
+  padding: var(--space-sm);
+  border-radius: var(--radius-full);
   color: var(--text-muted);
   background: var(--bg-secondary);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-full);
 }
 
 .nature-category-arrow {
+  transition: transform var(--transition);
   width: 24px;
   height: 24px;
   color: var(--text-secondary);
-  transition: transform var(--transition-base);
 }
 
 .nature-category.active .nature-category-arrow {
@@ -1304,12 +1259,12 @@ main {
 }
 
 .nature-item {
+  transition: background var(--transition);
   display: flex;
   align-items: flex-start;
   gap: var(--space-md);
   padding: var(--space-md) var(--space-lg);
   border-bottom: 1px solid var(--border);
-  transition: background var(--transition-fast);
 }
 
 .nature-item:last-child {
@@ -1321,6 +1276,7 @@ main {
 }
 
 .nature-item-image {
+  display: none;
   width: 80px;
   height: 60px;
   border-radius: var(--radius-md);
@@ -1329,22 +1285,21 @@ main {
 }
 
 .nature-item-image img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .nature-item-content h4 {
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  color: var(--text-primary);
+  font-size: var(--font-size-sm);
   margin-bottom: var(--space-xs);
+  color: var(--text-primary);
 }
 
 .nature-item-content p {
   font-size: var(--font-size-sm);
-  color: var(--text-secondary);
   line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* Responsive Design */

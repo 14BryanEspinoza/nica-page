@@ -43,11 +43,7 @@ NicaPage es un sitio web multipágina que permite a los usuarios explorar difere
 ├── Assets/
 │   ├── Img/
 │   ├── Video/
-│   │   └── nicaraguaVideo.mp4
-│   ├── video/
-│   │   └── Nicaragua Video.vtt
 │   └── Svg/
-│       └── favicon.svg
 ```
 
 ---
@@ -63,14 +59,14 @@ No requiere instalación ni build. Abrir `index.html` directamente en el navegad
 
 ## 🧑‍💻 Autor
 
-**Bryan14Saenz**
+**14BryanEspinoza**
 
 > “Programa no para resolver problemas, sino para crear soluciones.”
 
-📧 Correo: [14bryansaenz@gmail.com](mailto:14bryespinoza@gmail.com)  
-🌐 GitHub: [github.com/Bryan14Saenz](https://github.com/14bryanespinoza)  
-🔗 LinkedIn: [linkedin.com/in/14bryansaenz](https://www.linkedin.com/in/14bryanespinoza)  
-🐦 Twitter: [twitter.com/14BryanSaenz](https://twitter.com/14bryanespinoza)
-📘 Facebook: [facebook.com/14BryanSaenz](https://www.facebook.com/14bryanespinoza)  
+📧 Correo: [14bryespinoza@gmail.com](mailto:14bryespinoza@gmail.com)  
+🌐 GitHub: [github.com/14bryanespinoza](https://github.com/14bryanespinoza)  
+🔗 LinkedIn: [linkedin.com/in/14bryanespinoza](https://www.linkedin.com/in/14bryanespinoza)  
+🐦 Twitter: [twitter.com/14bryanespinoza](https://twitter.com/14bryanespinoza)
+📘 Facebook: [facebook.com/14bryanespinoza](https://www.facebook.com/14bryanespinoza)
 
 ---
