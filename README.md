@@ -1,6 +1,6 @@
 # NicaPage - Guía Turística de Nicaragua
 
-Sitio web informativo sobre la riqueza cultural, turística e histórica de Nicaragua. Proyecto desarrollado con HTML5, CSS3 y vanilla JavaScript, inspirado en el proyecto "Nicaragua Conócenos".
+Sitio web informativo sobre la riqueza cultural, turística e histórica de Nicaragua. Proyecto desarrollado con HTML5, CSS3 y vanilla JavaScript.
 
 ## Descripción
 
