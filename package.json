@@ -12,9 +12,30 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.3"
+    "@astrojs/sitemap": "^3.7.4",
+    "@iconify-json/lucide": "^1.2.133",
+    "@iconify-json/simple-icons": "^1.2.96",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.3",
+    "astro-icon": "^1.2.0",
+    "sharp": "^0.35.4",
+    "tailwindcss": "^4.3.3"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.10.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "eslint-plugin-tailwind": "^0.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.7",
+    "prettier-plugin-astro": "^1.0.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.70.0"
   }
 }
