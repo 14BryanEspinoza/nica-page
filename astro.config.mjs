@@ -12,8 +12,8 @@ export default defineConfig({
 
   integrations: [icon(), sitemap()],
 
-  site: "https://14bryanespinoza.github.io/deli-hots/",
-  base: "/deli-hots/",
+  site: "https://14bryanespinoza.github.io/nica-page/",
+  base: "/nica-page/",
   build: { assets: "assets" },
 
   image: {
