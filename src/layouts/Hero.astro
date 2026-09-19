@@ -1,0 +1,41 @@
+---
+import { Picture } from "astro:assets";
+import Link from "@components/Link.astro";
+import collageNic from "@assets/collage-nicaragua.png";
+---
+
+<section
+  class="grid grid-cols-1 gap-12 bg-linear-to-r from-text-blue to-text-blue-light px-8 py-24 text-bg-primary md:grid-cols-2 lg:items-center lg:px-16"
+  aria-labelledby="home-title"
+>
+  <div>
+    <h1 class="mb-4 text-3xl font-bold lg:text-4xl">Discover Nicaragua</h1>
+
+    <p class="mb-8">
+      The land of lakes and volcanoes awaits you. A country rich in history,
+      culture, and paradise-like beaches, with a cuisine that will make you fall
+      in love.
+    </p>
+
+    <Link
+      url="/nica-page/tourism"
+      label="Explore Destinations ->"
+      className="max-w-2xs rounded-md bg-bg-primary py-2 font-bold text-text-primary hover:bg-text-blue-light hover:text-bg-primary"
+    />
+
+    <Link
+      url=""
+      label="Learn More ->"
+      className="mt-4 max-w-2xs rounded-md border border-bg-primary py-2 font-bold text-bg-primary hover:border-transparent  hover:bg-text-blue-light hover:text-bg-primary"
+    />
+  </div>
+
+  <figure class="overflow-hidden rounded-md md:max-w-xl">
+    <Picture
+      alt="collection of images of Nicaragua"
+      src={collageNic}
+      formats={["avif", "webp"]}
+      priority
+    />
+  </figure>
+</section>
