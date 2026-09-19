@@ -1,0 +1,36 @@
+---
+import videoNic from "@assets/video/nicaragua-video.mp4";
+---
+
+<section
+  id="discover"
+  class="bg-bg-primary px-8 py-24"
+  aria-labelledby="video-title"
+>
+  <!-- Container Text -->
+  <div class="mx-auto mb-4 max-w-4xl text-center">
+    <h2 class="mb-2 text-2xl font-bold text-text-primary">
+      Discover Nicaragua through a video.
+    </h2>
+
+    <p class="text-text-secondary">
+      Let yourself be captivated by the beauty of our landscapes, the warmth of
+      our people, and the richness of our culture.
+    </p>
+  </div>
+
+  <div class="relative mx-auto w-full max-w-3xl overflow-hidden rounded-md shadow">
+    <video
+      class="block w-full"
+      src={videoNic}
+      muted
+      autoplay
+      loop
+      preload="metadata"
+      aria-label="promotional video for Nicaragua"
+    >
+      Your browser does not support the video element.
+    </video>
+  </div>
+</section>
+---
