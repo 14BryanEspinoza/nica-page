@@ -8,7 +8,10 @@ import favicon from "@assets/favicon.png";
 const currentPath = Astro.url.pathname;
 ---
 
-<a class="flex items-center gap-4 transition hover:scale-105" href="/nica-page/">
+<a
+  class="flex items-center gap-4 transition hover:scale-105"
+  href="/nica-page/"
+>
   <figure class="size-8">
     <Picture
       src={favicon}
@@ -18,26 +21,30 @@ const currentPath = Astro.url.pathname;
       priority
     />
   </figure>
-  <span class="font-bold text-lg text-text-blue">NicaPage</span>
+  <span class="text-lg font-bold text-text-blue">NicaPage</span>
 </a>
 
 <input type="checkbox" id="menu-toggle" class="peer hidden" />
 <label for="menu-toggle" aria-label="open menu">
-  <Icon name="lucide:menu" class="cursor-pointer text-3xl md:hidden" />
+  <Icon name="lucide:menu" class="cursor-pointer text-3xl lg:hidden" />
 </label>
 
 <nav
-  class="hidden h-[92dvh] w-full flex-col items-center justify-center peer-checked:flex md:flex md:h-auto md:w-auto"
+  class="hidden h-[92dvh] w-full flex-col items-center justify-center peer-checked:flex lg:flex lg:h-auto lg:w-auto"
   aria-label="main"
 >
-  <ul role="list" class="md:flex md:items-center md:gap-8">
+  <ul role="list" class="lg:flex lg:items-center lg:gap-8">
     {linkNavbar.map((link) => {
       const normalize = (path: string) => path.replace(/\/$/, "");
       const isActive = normalize(currentPath) === normalize(link.url);
 
       return (
         <li>
-          <Link {...link} className="mt-12 md:mt-0" active={isActive} />
+          <Link
+            {...link}
+            className="mt-12 hover:text-text-blue-light lg:mt-0"
+            active={isActive}
+          />
         </li>
       );
     })}
