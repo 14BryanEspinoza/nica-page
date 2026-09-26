@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+
+import Cards from "@components/Cards.astro";
+import ContainerText from "@components/ContainerText.astro";
+import Link from "@components/Link.astro";
+
+const destinations = await getCollection("destinations");
+---
+
+<section
+  class="mx-auto max-w-7xl bg-bg-secondary px-8 py-24"
+  aria-labelledby="destination-title"
+>
+  <ContainerText
+    title="Featured Destinations"
+    description="From white-sand beaches to active volcanoes, Nicaragua offers unique experiences for every type of traveler.."
+  />
+
+  <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+    {destinations.map((dest) => {
+      const { title, image, imageAlt, description } = dest.data;
+
+      return (
+        <Cards
+          title={title}
+          description={description}
+          image={image}
+          imageAlt={imageAlt}
+        />
+      );
+    })}
+  </div>
+
+  <div class="mt-12 flex justify-center">
+    <Link
+      url="/nica-page/tourism"
+      label="Explore Destinations ->"
+      className="rounded-md bg-text-blue-light p-4 font-bold text-bg-primary hover:bg-text-success"
+    />
+  </div>
+</section>
