@@ -6,6 +6,7 @@ import Hero from "@layouts/Hero.astro";
 import Discover from "@layouts/Discover.astro";
 import Featured from "@layouts/Featured.astro";
 import CallToAction from "@layouts/CallToAction.astro";
+import Footer from "@layouts/Footer.astro";
 
 const destination = await getCollection("destination");
 const gastronomy = await getCollection("gastronomy");
@@ -38,4 +39,5 @@ const gastronomy = await getCollection("gastronomy");
       buttonLink2="/nica-page/culture"
     />
   </main>
+  <Footer />
 </Layout>
