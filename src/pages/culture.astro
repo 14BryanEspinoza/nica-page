@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HeroSecondary from "@layouts/HeroSecondary.astro";
+import CallToAction from "@layouts/CallToAction.astro";
+import Footer from "@layouts/Footer.astro";
+---
+
+<Layout title="Nica-Page">
+  <main id="main-content">
+    <HeroSecondary
+      id="culturePage"
+      title="Culture and Festivities"
+      description="Traditions, celebrations, and artistic expressions that define the Nicaraguan soul"
+    />
+    <CallToAction
+      title="Do you want to have these experiences?"
+      description="Explore the tourist destinations where you can witness these traditions and discover the natural beauty of Nicaragua."
+      buttonText="Explore tourism"
+      buttonLink="/nica-page/tourism"
+      buttonText2="Explore gastronomy"
+      buttonLink2="/nica-page/gastronomy"
+    />
+  </main>
+  <Footer />
+</Layout>
