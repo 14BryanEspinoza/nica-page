@@ -1,14 +1,41 @@
 ---
+import { getCollection } from "astro:content";
+
 import Layout from "@layouts/Layout.astro";
 import Hero from "@layouts/Hero.astro";
 import Discover from "@layouts/Discover.astro";
 import Featured from "@layouts/Featured.astro";
+import CallToAction from "@layouts/CallToAction.astro";
+
+const destination = await getCollection("destination");
+const gastronomy = await getCollection("gastronomy");
 ---
 
 <Layout title="Nica-Page">
   <main id="main-content">
     <Hero />
     <Discover />
-    <Featured />
+    <Featured
+      title="Featured Destinations"
+      description="From white-sand beaches to active volcanoes, Nicaragua offers unique experiences for every type of traveler..."
+      collection={destination}
+      link="/nica-page/tourism"
+      label="Destinations"
+    />
+    <Featured
+      title="Flavors of Nicaragua"
+      description="Nicaraguan cuisine is a fusion of indigenous, Spanish, and African influences that creates unique and unforgettable flavors..."
+      collection={gastronomy}
+      link="/nica-page/gastronomy"
+      label="Gastronomy"
+    />
+    <CallToAction
+      title="Ready to discover Nicaragua?"
+      description="Explore our comprehensive travel guide, discover the history of our town, and be amazed by the fascinating details of this unique country."
+      buttonText="Explore history"
+      buttonLink="/nica-page/history"
+      buttonText2="Explore culture"
+      buttonLink2="/nica-page/culture"
+    />
   </main>
 </Layout>
