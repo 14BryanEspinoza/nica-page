@@ -1,23 +1,18 @@
 ---
+import ContainerText from "@components/ContainerText.astro";
 import videoNic from "@assets/video/nicaragua-video.mp4";
 ---
 
 <section
   id="discover"
   class="bg-bg-primary px-8 py-24"
-  aria-labelledby="video-title"
+  aria-labelledby="discover-title"
 >
-  <!-- Container Text -->
-  <div class="mx-auto mb-4 max-w-4xl text-center">
-    <h2 class="mb-2 text-2xl font-bold text-text-primary">
-      Discover Nicaragua through a video.
-    </h2>
-
-    <p class="text-text-secondary">
-      Let yourself be captivated by the beauty of our landscapes, the warmth of
-      our people, and the richness of our culture.
-    </p>
-  </div>
+  <ContainerText
+    title="Discover Nicaragua through a video."
+    description="Let yourself be captivated by the beauty of our landscapes, the warmth of
+      our people, and the richness of our culture."
+  />
 
   <div class="relative mx-auto w-full max-w-3xl overflow-hidden rounded-md shadow">
     <video
@@ -33,4 +28,3 @@ import videoNic from "@assets/video/nicaragua-video.mp4";
     </video>
   </div>
 </section>
----
