@@ -1,0 +1,32 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt?: string;
+}
+
+const { title, description, image, imageAlt } = Astro.props;
+---
+
+<article class="hover:shadow-accent cursor-pointer overflow-hidden rounded-md bg-bg-primary shadow transition hover:scale-105 hover:shadow-lg">
+  <figure class="relative h-56 overflow-hidden">
+    <Picture
+      src={image}
+      alt={imageAlt ?? title}
+      width={400}
+      formats={["avif", "webp"]}
+      loading="lazy"
+      decoding="async"
+    />
+  </figure>
+
+  <div class="px-6 py-4">
+    <h3 class="mb-4 text-lg font-bold text-text-primary">{title}</h3>
+
+    <p class="text-text-secondary">{description}</p>
+  </div>
+</article>
