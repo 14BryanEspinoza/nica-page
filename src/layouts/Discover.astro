@@ -16,15 +16,43 @@ import videoNic from "@assets/video/nicaragua-video.mp4";
 
   <div class="relative mx-auto w-full max-w-3xl overflow-hidden rounded-md shadow">
     <video
+      id="discover-video"
       class="block w-full"
       src={videoNic}
+      controls
       muted
       autoplay
       loop
       preload="metadata"
+      playsinline
       aria-label="promotional video for Nicaragua"
     >
       Your browser does not support the video element.
     </video>
   </div>
 </section>
+
+<script>
+  const handlePageLoad = () => {
+    const video = document.getElementById(
+      "discover-video",
+    ) as HTMLVideoElement | null;
+    if (video) {
+      video.muted = true;
+      video.play().catch(() => {});
+    }
+  };
+
+  const handleBeforeSwap = () => {
+    const video = document.getElementById(
+      "discover-video",
+    ) as HTMLVideoElement | null;
+    if (video) {
+      video.pause();
+      video.muted = true;
+    }
+  };
+
+  document.addEventListener("astro:page-load", handlePageLoad);
+  document.addEventListener("astro:before-swap", handleBeforeSwap);
+</script>
