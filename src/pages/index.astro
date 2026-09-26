@@ -10,6 +10,9 @@ import Footer from "@layouts/Footer.astro";
 
 const destination = await getCollection("destination");
 const gastronomy = await getCollection("gastronomy");
+
+const destShort = destination.slice(3, 6);
+const gastShort = gastronomy.slice(2, 5);
 ---
 
 <Layout title="Nica-Page">
@@ -19,14 +22,14 @@ const gastronomy = await getCollection("gastronomy");
     <Featured
       title="Featured Destinations"
       description="From white-sand beaches to active volcanoes, Nicaragua offers unique experiences for every type of traveler..."
-      collection={destination}
+      collection={destShort}
       link="/nica-page/tourism"
       label="Destinations"
     />
     <Featured
       title="Flavors of Nicaragua"
       description="Nicaraguan cuisine is a fusion of indigenous, Spanish, and African influences that creates unique and unforgettable flavors..."
-      collection={gastronomy}
+      collection={gastShort}
       link="/nica-page/gastronomy"
       label="Gastronomy"
     />
