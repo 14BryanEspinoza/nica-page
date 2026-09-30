@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+
+import ContainerText from "@components/ContainerText.astro";
+import CitiesCard from "@components/CitiesCard.astro";
+
+const destination = await getCollection("destination");
+---
+
+<section class="bg-bg-primary px-8 py-24" aria-labelledby="destination-title">
+  <ContainerText
+    title="Places you must visit"
+    description="Nicaragua offers a wide variety of tourist destinations, from idyllic beaches to colonial cities rich in history."
+  />
+
+  <div class="mx-12 mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+    {destination.map((dest) => {
+      const { id, title, image, attractions, moreInfoUrl } = dest.data;
+
+      return (
+        <CitiesCard
+          id={id}
+          title={title}
+          image={image}
+          attractions={attractions}
+          moreInfoUrl={moreInfoUrl}
+        />
+      );
+    })}
+  </div>
+</section>
