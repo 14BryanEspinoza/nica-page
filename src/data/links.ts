@@ -5,30 +5,30 @@ interface LinksProps {
 }
 
 export const linkNavbar: LinksProps[] = [
-  { url: "/nica-page/", label: "Home", icon: "lucide:house" },
+  { url: "/nica-page/", label: "Inicio", icon: "lucide:house" },
   {
     url: "/nica-page/tourism/",
-    label: "Tourism",
+    label: "Turismo",
     icon: "lucide:plane-takeoff",
   },
   {
     url: "/nica-page/gastronomy/",
-    label: "Gastronomy",
+    label: "Gastronomía",
     icon: "lucide:drumstick",
   },
   {
     url: "/nica-page/history/",
-    label: "History",
+    label: "Historia",
     icon: "lucide:landmark",
   },
   {
     url: "/nica-page/culture/",
-    label: "Culture",
+    label: "Cultura",
     icon: "lucide:guitar",
   },
   {
     url: "/nica-page/nature/",
-    label: "Nature",
+    label: "Naturaleza",
     icon: "lucide:leaf",
   },
 ];
@@ -53,7 +53,7 @@ export const socialNetworks: LinksProps[] = [
 ];
 
 export const linkOthers: LinksProps[] = [
-  { url: "#", label: "Terms" },
-  { url: "#", label: "Privacy" },
+  { url: "#", label: "Términos" },
+  { url: "#", label: "Privacidad" },
   { url: "#", label: "Cookies" },
 ];

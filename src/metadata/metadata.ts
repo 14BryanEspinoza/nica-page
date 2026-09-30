@@ -9,11 +9,11 @@ interface MetaProps {
 
 export const meta: MetaProps = {
   description:
-    "Explore Nicaragua with NicaPage: a comprehensive guide to tourism, gastronomy, history, culture, and nature. Discover beaches, volcanoes, colonial cities, and local traditions as you plan your next adventure in the land of lakes and volcanoes.",
+    "Descubre Nicaragua con NicaPage: una guía completa de turismo, gastronomía, historia, cultura y naturaleza. Explora playas, volcanes, ciudades coloniales y tradiciones locales mientras planeas tu próxima aventura en la tierra de los lagos y los volcanes.",
   keywords:
-    "Nicaragua, Tourism, Gastronomy, History, Culture, Managua, Granada, León, San Juan del Sur",
+    "Nicaragua, Turismo, Gastronomía, Historia, Cultura, Managua, Granada, León, San Juan del Sur",
   author: "14BryanEspinoza",
-  title: "NicaPage - Discover Nicaragua",
+  title: "NicaPage - Descubre Nicaragua",
   image:
     "https://raw.githubusercontent.com/14BryanEspinoza/nica-page/main/public/preview.png",
   canonical: "https://14bryanespinoza.github.io/nica-page/",

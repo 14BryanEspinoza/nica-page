@@ -15,7 +15,7 @@ const currentPath = Astro.url.pathname;
   <figure class="size-8">
     <Picture
       src={favicon}
-      alt="page logo"
+      alt="logotipo de la página"
       loading={"eager"}
       formats={["avif", "webp"]}
       priority
@@ -25,13 +25,13 @@ const currentPath = Astro.url.pathname;
 </a>
 
 <input type="checkbox" id="menu-toggle" class="peer hidden" />
-<label for="menu-toggle" aria-label="open menu">
+<label for="menu-toggle" aria-label="abrir menú">
   <Icon name="lucide:menu" class="cursor-pointer text-3xl lg:hidden" />
 </label>
 
 <nav
   class="hidden h-[92dvh] w-full flex-col items-center justify-center peer-checked:flex lg:flex lg:h-auto lg:w-auto"
-  aria-label="main"
+  aria-label="principal"
 >
   <ul role="list" class="lg:flex lg:items-center lg:gap-8">
     {linkNavbar.map((link) => {

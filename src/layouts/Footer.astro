@@ -3,19 +3,22 @@ import Link from "@components/Link.astro";
 import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
 ---
 
-<footer class="bg-text-blue px-8 py-16 text-bg-primary" aria-label="footer">
+<footer
+  class="bg-text-blue px-8 py-16 text-bg-primary"
+  aria-label="pie de página"
+>
   <h2 class="mb-4 text-2xl font-bold uppercase">NicaPage</h2>
 
   <p>
-    Your complete guide to discovering the beauty, history, and culture of
-    Nicaragua. The land of lakes and volcanoes.
+    Tu guía completa para descubrir la belleza, la historia y la cultura de
+    Nicaragua. La tierra de los lagos y los volcanes.
   </p>
 
   <section class="my-12 grid grid-cols-1 gap-12 md:grid-cols-2">
     <article>
-      <h3 class="mb-4 font-bold">Social Networks</h3>
+      <h3 class="mb-4 font-bold">Redes sociales</h3>
 
-      <nav aria-label="social links">
+      <nav aria-label="redes sociales">
         <ul class="flex gap-8">
           {socialNetworks.map((link) => (
             <li>
@@ -31,9 +34,9 @@ import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
     </article>
 
     <article>
-      <h3 class="mb-4 font-bold">Navigation</h3>
+      <h3 class="mb-4 font-bold">Navegación</h3>
 
-      <nav aria-label="footer links">
+      <nav aria-label="enlaces del pie de página">
         <ul class="flex flex-col items-start gap-8 lg:flex-row">
           {linkNavbar.map((link) => (
             <li>
@@ -49,7 +52,7 @@ import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
   </section>
 
   <article class="flex flex-col items-center gap-8 border-t border-border pt-12 md:flex-row md:justify-between">
-    <nav aria-label="legal links">
+    <nav aria-label="enlaces legales">
       <ul class="flex gap-12" role="list">
         {linkOthers.map((link) => (
           <li>
