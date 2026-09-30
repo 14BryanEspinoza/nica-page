@@ -9,9 +9,10 @@ interface Props {
   icon?: string;
   className?: string;
   active?: boolean;
+  targ?: boolean;
 }
 
-const { url, label, className, skip, viewIcon, icon, active } =
+const { url, label, className, skip, viewIcon, icon, active, targ } =
   Astro.props as Props;
 const baseStyle =
   "flex gap-2 items-center justify-center transition hover:scale-105";
@@ -23,6 +24,8 @@ const activeStyle =
 
 <a
   href={url}
+  target={targ ? "_blank" : ""}
+  rel={targ ? "noopener noreferrer" : ""}
   class={`${skip ? skipStyle : baseStyle} ${className} ${active ? activeStyle : ""}`}
 >
   {viewIcon && icon && <Icon name={icon} class="text-xl" />}
