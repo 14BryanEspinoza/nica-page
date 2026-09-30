@@ -4,10 +4,22 @@ import { z } from "astro/zod";
 
 const commonSchema = ({ image }: { image: ImageFunction }) =>
   z.object({
+    id: z.string(),
     title: z.string(),
     description: z.string(),
     image: image(),
     imageAlt: z.string(),
+  });
+
+const destinationSchema = ({ image }: { image: ImageFunction }) =>
+  commonSchema({ image }).extend({
+    attractions: z.array(
+      z.object({
+        name: z.string(),
+        url: z.string(),
+      }),
+    ),
+    moreInfoUrl: z.string(),
   });
 
 export const collections = {
@@ -16,7 +28,7 @@ export const collections = {
       pattern: "**/*.{md,mdx}",
       base: "./src/content/destinations",
     }),
-    schema: commonSchema,
+    schema: destinationSchema,
   }),
   gastronomy: defineCollection({
     loader: glob({
