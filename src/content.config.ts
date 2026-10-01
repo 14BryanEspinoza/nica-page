@@ -22,6 +22,12 @@ const destinationSchema = ({ image }: { image: ImageFunction }) =>
     moreInfoUrl: z.string(),
   });
 
+const gastronomySchema = ({ image }: { image: ImageFunction }) =>
+  commonSchema({ image }).extend({
+    ingredients: z.array(z.string()),
+    tag: z.string(),
+  });
+
 export const collections = {
   destination: defineCollection({
     loader: glob({
@@ -35,6 +41,6 @@ export const collections = {
       pattern: "**/*.{md,mdx}",
       base: "./src/content/gastronomy",
     }),
-    schema: commonSchema,
+    schema: gastronomySchema,
   }),
 };
