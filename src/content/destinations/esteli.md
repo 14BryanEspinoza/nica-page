@@ -8,16 +8,16 @@ attractions:
   [
     {
       "name": "Reserva Natural Tisey-Estanzuela",
-      "url": "https://vianica.com/sp/atractivo/607/reserva-natural-el-tisey-estanzuela",
+      "url": "https://www.mapanicaragua.com/reserva-natural-cerro-tisey-estanzuela/",
     },
     {
       "name": "Cañón de Somoto",
-      "url": "https://vianica.com/sp/atractivo/513/canon-de-somoto",
+      "url": "https://recetasdenicaragua.com/departamentos/canon-somoto/",
     },
     {
       "name": "Fábricas de Puros Premium",
-      "url": "https://www.visitanicaragua.com/destino/esteli/",
+      "url": "https://tabacospichardo.com/",
     },
   ]
-moreInfoUrl: "https://www.visitanicaragua.com/destino/esteli/"
+moreInfoUrl: "https://www.intur.gob.ni/"
 ---

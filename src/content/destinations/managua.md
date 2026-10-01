@@ -8,16 +8,16 @@ attractions:
   [
     {
       "name": "Puerto Salvador Allende",
-      "url": "https://www.salvadorallende.com.ni/",
+      "url": "https://www.vivenicaragua.com/destinos/managua/6-razones-para-visitar-el-puerto-salvador-allende-en-managua/",
     },
     {
-      "name": "Parque Histórico Loma de Tiscapa",
-      "url": "https://vianica.com/sp/atractivo/2/loma-de-tiscapa",
+      "name": "Mirador Laguna de Tiscapa",
+      "url": "https://wanderlog.com/es/place/details/13082659/mirador-de-tiscapa",
     },
     {
       "name": "Antigua Catedral de Managua",
-      "url": "https://vianica.com/sp/atractivo/1/antigua-catedral-de-managua",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g294478-d4776904-Reviews-Antigua_Catedral_de_Managua-Managua_Managua_Department.html",
     },
   ]
-moreInfoUrl: "https://www.visitanicaragua.com/destino/managua/"
+moreInfoUrl: "https://www.intur.gob.ni/"
 ---

@@ -6,18 +6,15 @@ image: "../../assets/destinations/corn-island.png"
 imageAlt: "Aguas turquesas y palmeras en Corn Island"
 attractions:
   [
-    {
-      "name": "Little Corn Island",
-      "url": "https://www.tripadvisor.es/Tourism-g644047-Little_Corn_Island_Mosquito_Coast_South_Caribbean_Coast_Region-Vacations.html",
-    },
+    { "name": "Little Corn Island", "url": "https://littlecornisland.net/" },
     {
       "name": "Buceo en Arrecifes de Coral",
-      "url": "https://www.dostiburones.com/",
+      "url": "https://www.buceosafari.com/buceo/america/nicaragua/buceo-en-corn-island-nicaragua",
     },
     {
       "name": "Otto Beach",
-      "url": "https://www.tripadvisor.es/Attraction_Review-g644047-d10292837-Reviews-Otto_Beach-Little_Corn_Island_Mosquito_Coast_South_Caribbean_Coast_Region.html",
+      "url": "https://www.island-treasure.com/swim-in-the-shallow-waters-of-otto-beach/",
     },
   ]
-moreInfoUrl: "https://www.visitanicaragua.com/destino/corn-island/"
+moreInfoUrl: "https://www.intur.gob.ni/"
 ---

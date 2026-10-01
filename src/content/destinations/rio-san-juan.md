@@ -8,16 +8,16 @@ attractions:
   [
     {
       "name": "El Castillo de la Inmaculada Concepción",
-      "url": "https://vianica.com/sp/atractivo/16/el-castillo-de-la-inmaculada-concepcion",
+      "url": "https://www.riosanjuan.com.ni/el-castillo/",
     },
     {
       "name": "Reserva de Biosfera Indio Maíz",
-      "url": "https://vianica.com/sp/atractivo/131/reserva-biologica-indio-maiz",
+      "url": "https://www.visitanicaragua.com/en/Natural-spaces/Indian-Corn-Biological-Reserve/",
     },
     {
       "name": "Archipiélago de Solentiname",
-      "url": "https://vianica.com/sp/atractivo/15/solentiname",
+      "url": "https://www.visitanicaragua.com/en/islas/archipielago-de-solentiname/",
     },
   ]
-moreInfoUrl: "https://www.visitanicaragua.com/destino/rio-san-juan/"
+moreInfoUrl: "https://www.intur.gob.ni/"
 ---

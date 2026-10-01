@@ -8,13 +8,13 @@ attractions:
   [
     {
       "name": "Las Isletas de Granada",
-      "url": "https://vianica.com/sp/atractivo/12/isletas-de-granada",
+      "url": "https://www.indietraveller.co/islets-of-granada-travel-guide/",
     },
-    { "name": "Volcán Mombacho", "url": "https://mombacho.org/" },
+    { "name": "Volcán Mombacho", "url": "https://volcanmombacho.com/" },
     {
       "name": "Iglesia La Merced",
-      "url": "https://www.tripadvisor.es/Attraction_Review-g580457-d3527267-Reviews-Iglesia_La_Merced-Granada_Granada_Department.html",
+      "url": "https://havecamerawilltravel.com/field-notes/iglesia-merced-granada-nicaragua/",
     },
   ]
-moreInfoUrl: "https://www.visitanicaragua.com/destino/granada/"
+moreInfoUrl: "https://www.intur.gob.ni/"
 ---

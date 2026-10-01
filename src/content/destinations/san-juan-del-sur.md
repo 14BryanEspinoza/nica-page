@@ -8,16 +8,16 @@ attractions:
   [
     {
       "name": "Playa Maderas",
-      "url": "https://www.tripadvisor.es/Attraction_Review-g503831-d2432863-Reviews-Playa_Maderas-San_Juan_del_Sur_Rivas_Department.html",
+      "url": "https://www.alongdustyroads.com/posts/playa-maderas-nicaragua",
     },
     {
       "name": "Cristo de la Misericordia",
-      "url": "https://vianica.com/sp/atractivo/516/cristo-de-la-misericordia",
+      "url": "https://www.tripadvisor.com/Attraction_Review-g528745-d5889584-Reviews-Mirador_del_Cristo_de_la_Misericordia-San_Juan_del_Sur_Rivas_Department.html",
     },
     {
       "name": "Reserva La Flor",
-      "url": "https://vianica.com/sp/atractivo/130/refugio-de-vida-silvestre-la-flor",
+      "url": "https://www.visitcentroamerica.com/en/visit/la-flor-wildlife-refuge/",
     },
   ]
-moreInfoUrl: "https://www.visitanicaragua.com/destino/san-juan-del-sur/"
+moreInfoUrl: "https://www.intur.gob.ni/"
 ---

@@ -8,16 +8,16 @@ attractions:
   [
     {
       "name": "Parque Nacional Volcán Masaya",
-      "url": "https://www.visitanicaragua.com/destino/parque-nacional-volcan-masaya/",
+      "url": "https://www.thoroughlytravel.com/masaya-volcano-national-park/",
     },
     {
-      "name": "Mercado de Artesanías de Masaya",
-      "url": "https://vianica.com/sp/atractivo/18/mercado-de-artesanias-de-masaya",
+      "name": "Mercado de Artesanías",
+      "url": "https://www.visitcentroamerica.com/visitar/masaya-mercado-artesania/",
     },
     {
       "name": "Mirador de Catarina y Laguna de Apoyo",
-      "url": "https://vianica.com/sp/atractivo/19/catarina",
+      "url": "https://www.visitcentroamerica.com/visitar/mirador-de-catarina/",
     },
   ]
-moreInfoUrl: "https://www.intur.gob.ni/oferta-turistica/"
+moreInfoUrl: "https://www.intur.gob.ni/"
 ---
