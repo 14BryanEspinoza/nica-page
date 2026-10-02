@@ -1,0 +1,66 @@
+---
+import { getCollection } from "astro:content";
+
+import ContainerText from "@components/ContainerText.astro";
+import Dialog from "@components/Dialog.astro";
+import Cards from "@components/Cards.astro";
+
+import { protectedAreas } from "@data/protected-areas";
+import { sportsAdventures } from "@data/sports-adventures";
+
+const nature = await getCollection("nature");
+---
+
+<section
+  id="nature"
+  class="bg-bg-primary px-8 py-24"
+  aria-labelledby="nature-title"
+>
+  <ContainerText
+    title="Flora y Fauna"
+    description="Nicaragua es considerada uno de los países más biodiversos del mundo, con especies endémicas y ecosistemas únicos que van desde bosques nubosos hasta arrecifes de coral."
+  />
+
+  <div class="mx-4 mt-12 mb-24 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+    {nature.map((nat) => {
+      const { id, title, image } = nat.data;
+
+      return (
+        <a href={`/nature/${id}`}>
+          <article
+            id={id}
+            class="relative min-h-80 cursor-pointer overflow-hidden rounded-md bg-cover bg-center transition hover:scale-105"
+            style={`background-image: url('${image.src}')`}
+            transition:name={`img-${id}`}
+          >
+            <div class="absolute inset-0 bg-black/40 p-6 text-white">
+              <h3 class="text-xl font-bold">{title}</h3>
+            </div>
+          </article>
+        </a>
+      );
+    })}
+  </div>
+
+  <ContainerText
+    title="Áreas Protegidas"
+    description="Con 77 áreas protegidas que abarcan más del 20% del territorio nacional, Nicaragua cuenta con una impresionante red de parques nacionales, reservas biológicas, santuarios de flora y fauna y reservas naturales que protegen ecosistemas vitales y ofrecen experiencias inolvidables a los visitantes."
+  />
+
+  <div class="mb-24">
+    {protectedAreas.map((area) => (
+      <Dialog title={area.title} description={area.description} />
+    ))}
+  </div>
+
+  <ContainerText
+    title="Deportes y Aventuras"
+    description="Las vastas reservas naturales, volcanes, ríos y costas de Nicaragua ofrecen condiciones únicas para los deportes de aventura, desde el senderismo y el volcánismo hasta el surf y el canopy"
+  />
+
+  <div class="mx-4 mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+    {sportsAdventures.map((sport) => (
+      <Cards {...sport} />
+    ))}
+  </div>
+</section>

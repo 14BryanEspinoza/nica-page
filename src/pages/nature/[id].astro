@@ -1,0 +1,139 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import LayoutPage from "@layouts/LayoutPage.astro";
+
+export const getStaticPaths = async () => {
+  const nature = await getCollection("nature");
+
+  return nature.map((nat) => ({
+    params: { id: nat.data.id },
+    props: { nat },
+  }));
+};
+
+const { nat } = Astro.props;
+const { data } = nat;
+const {
+  id,
+  title,
+  description,
+  image,
+  imageAlt,
+  scientificName,
+  category,
+  habitat,
+  tag,
+  conservationStatus,
+} = data;
+---
+
+<LayoutPage title={`NicaPage | ${title}`} backUrl="/nica-page/nature#nature">
+  <main id="main-content" class="mx-auto max-w-6xl px-6 py-12 lg:px-12">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+      <section class="lg:col-span-6">
+        <header class="mb-4 text-center lg:text-left">
+          <h1 class="text-2xl font-extrabold text-text-blue">{title}</h1>
+
+          <p class="mt-2 text-lg text-text-secondary italic">
+            {scientificName}
+          </p>
+
+          <div class="mt-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-tertiary px-3.5 py-1 text-xs font-semibold tracking-wider text-text-blue uppercase">
+              <Icon name="lucide:layers" class="size-3.5" />
+              {category}
+            </span>
+
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-tertiary px-3.5 py-1 text-xs font-semibold tracking-wider text-text-accent uppercase">
+              <Icon name="lucide:tag" class="size-3.5" />
+              {tag}
+            </span>
+
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-secondary px-3.5 py-1 text-xs font-semibold tracking-wider text-text-secondary uppercase">
+              <Icon
+                name="lucide:shield-check"
+                class="size-3.5 text-text-success"
+              />
+              {conservationStatus}
+            </span>
+          </div>
+        </header>
+
+        <div class="group relative overflow-hidden rounded-xl border border-border bg-bg-secondary shadow-lg">
+          <Image
+            src={image}
+            alt={imageAlt}
+            class="h-80 w-full object-cover transition-transform duration-500 hover:scale-105"
+            transition:name={`img-${id}`}
+          />
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-2 lg:col-span-6">
+        <article class="rounded-xl border border-border bg-bg-primary p-6 shadow-xs">
+          <h2 class="mb-4 flex items-center gap-2 text-lg font-bold text-text-blue">
+            <Icon name="lucide:book-open" class="size-5 text-text-blue-light" />
+            Descripción
+          </h2>
+          <p class="text-justify text-sm leading-relaxed text-text-primary">
+            {description}
+          </p>
+        </article>
+
+        <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <div class="flex flex-col gap-1 rounded-lg border border-border bg-bg-secondary p-4 transition-colors hover:border-text-blue-light/40 hover:bg-bg-tertiary">
+            <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-text-muted">
+              <Icon name="lucide:dna" class="size-4 text-text-blue-light" />
+              Nombre Científico
+            </div>
+            <span class="text-sm font-semibold text-text-primary italic">
+              {scientificName}
+            </span>
+          </div>
+
+          <div class="flex flex-col gap-1 rounded-lg border border-border bg-bg-secondary p-4 transition-colors hover:border-text-blue-light/40 hover:bg-bg-tertiary">
+            <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-text-muted">
+              <Icon name="lucide:trees" class="size-4 text-text-accent" />
+              Categoría
+            </div>
+            <span class="text-sm font-semibold text-text-primary">
+              {category}
+            </span>
+          </div>
+
+          <div class="flex flex-col gap-1 rounded-lg border border-border bg-bg-secondary p-4 transition-colors hover:border-text-blue-light/40 hover:bg-bg-tertiary">
+            <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-text-muted">
+              <Icon name="lucide:tag" class="size-4 text-text-blue" />
+              Clasificación
+            </div>
+            <span class="text-sm font-semibold text-text-primary">{tag}</span>
+          </div>
+
+          <div class="flex flex-col gap-1 rounded-lg border border-border bg-bg-secondary p-4 transition-colors hover:border-text-blue-light/40 hover:bg-bg-tertiary">
+            <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-text-muted">
+              <Icon
+                name="lucide:shield-check"
+                class="size-4 text-text-success"
+              />
+              Estado de Conservación
+            </div>
+            <span class="text-sm font-semibold text-text-primary">
+              {conservationStatus}
+            </span>
+          </div>
+
+          <div class="flex flex-col gap-1 rounded-lg border border-border bg-bg-secondary p-4 transition-colors hover:border-text-blue-light/40 hover:bg-bg-tertiary sm:col-span-2">
+            <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-text-muted">
+              <Icon name="lucide:map-pin" class="size-4 text-text-accent" />
+              Hábitat Natural
+            </div>
+            <span class="text-sm font-medium text-text-primary">{habitat}</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</LayoutPage>
