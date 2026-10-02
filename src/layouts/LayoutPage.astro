@@ -1,17 +1,17 @@
 ---
 interface Props {
   title: string;
+  backUrl?: string;
 }
 
 import { ClientRouter } from "astro:transitions";
 import Link from "@components/Link.astro";
 import { Picture } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import { meta } from "@metadata/metadata";
 import favicon from "@assets/favicon.png";
 import "../styles/global.css";
 
-const { title } = Astro.props as Props;
+const { title, backUrl = "/nica-page/" } = Astro.props as Props;
 ---
 
 <html lang="es">
@@ -64,12 +64,7 @@ const { title } = Astro.props as Props;
         <span class="text-lg font-bold text-text-blue">NicaPage</span>
       </a>
 
-      <Link
-        url="/nica-page/gastronomy#meals"
-        label="Volver"
-        icon="lucide:arrow-left"
-        viewIcon
-      />
+      <Link url={backUrl} label="Volver" icon="lucide:arrow-left" viewIcon />
     </header>
 
     <slot />
