@@ -16,7 +16,7 @@ const gastronomy = await getCollection("gastronomy");
     description="La cocina nicaragüense es una mezcla de tradiciones indígenas, influencias españolas y toques del Caribe que crean sabores únicos."
   />
 
-  <div class="mx-12 mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+  <div class="mx-4 mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
     {gastronomy.map((gast) => {
       const { id, title, image } = gast.data;
 

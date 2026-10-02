@@ -16,7 +16,7 @@ interface Props {
 const { id, title, image, attractions, moreInfoUrl } = Astro.props;
 
 const baseArticleStyle =
-  "group overflow-hidden relative min-h-80 rounded-md bg-cover bg-center";
+  "group overflow-hidden relative min-h-96 rounded-md bg-cover bg-center";
 const beforeStyle =
   "before:content-[''] before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/80 before:pointer-events-none";
 const baseCardStyle =
@@ -29,7 +29,7 @@ const baseCardStyle =
   style={`background-image: url('${image.src}')`}
 >
   <div
-    class=`${baseCardStyle} translate-y-60 transition-transform duration-300 ease-in-out group-hover:translate-y-0`
+    class=`${baseCardStyle} translate-y-70 transition-transform duration-300 ease-in-out group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0`
   >
     <h3 class="text-xl font-bold">{title}</h3>
 

@@ -12,7 +12,7 @@ interface Props {
 const { title, description, image, imageAlt } = Astro.props;
 ---
 
-<article class="hover:shadow-accent w-96 cursor-pointer overflow-hidden rounded-md bg-bg-primary shadow transition hover:scale-105 hover:shadow-lg">
+<article class="hover:shadow-accent max-w-96 cursor-pointer overflow-hidden rounded-md bg-bg-primary shadow transition hover:scale-105 hover:shadow-lg">
   <figure class="h-60 overflow-hidden">
     <Picture
       src={image}

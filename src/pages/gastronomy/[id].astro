@@ -19,7 +19,10 @@ const { id, title, description, image, imageAlt, ingredients, tag } = data;
 ---
 
 <LayoutMeals title=`NicaPage | ${title}`>
-  <main id="main-content" class="flex items-end gap-8 px-24 py-12">
+  <main
+    id="main-content"
+    class="px-8 py-12 md:mx-auto md:max-w-2xl lg:flex lg:max-w-none lg:items-end lg:justify-center lg:gap-8 lg:px-12"
+  >
     <section>
       <h1 class="text-4xl font-extrabold text-text-blue">{title}</h1>
 
@@ -37,7 +40,7 @@ const { id, title, description, image, imageAlt, ingredients, tag } = data;
       </div>
     </section>
 
-    <section class="max-w-3xl">
+    <section class="mt-4 max-w-3xl">
       <p class="mb-6 text-justify text-lg leading-relaxed text-text-primary">
         {description}
       </p>
