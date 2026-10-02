@@ -28,6 +28,15 @@ const gastronomySchema = ({ image }: { image: ImageFunction }) =>
     tag: z.string(),
   });
 
+const natureSchema = ({ image }: { image: ImageFunction }) =>
+  commonSchema({ image }).extend({
+    scientificName: z.string(),
+    category: z.string(),
+    habitat: z.string(),
+    tag: z.string(),
+    conservationStatus: z.string(),
+  });
+
 export const collections = {
   destination: defineCollection({
     loader: glob({
@@ -36,11 +45,20 @@ export const collections = {
     }),
     schema: destinationSchema,
   }),
+
   gastronomy: defineCollection({
     loader: glob({
       pattern: "**/*.{md,mdx}",
       base: "./src/content/gastronomy",
     }),
     schema: gastronomySchema,
+  }),
+
+  nature: defineCollection({
+    loader: glob({
+      pattern: "**/*.{md,mdx}",
+      base: "./src/content/flora-fauna",
+    }),
+    schema: natureSchema,
   }),
 };

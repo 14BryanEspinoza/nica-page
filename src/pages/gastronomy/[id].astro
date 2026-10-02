@@ -2,7 +2,7 @@
 import { getCollection, render } from "astro:content";
 import { Image } from "astro:assets";
 
-import LayoutMeals from "@layouts/LayoutMeals.astro";
+import LayoutPage from "@layouts/LayoutPage.astro";
 
 export const getStaticPaths = async () => {
   const gastronomy = await getCollection("gastronomy");
@@ -18,7 +18,7 @@ const { data } = gast;
 const { id, title, description, image, imageAlt, ingredients, tag } = data;
 ---
 
-<LayoutMeals title=`NicaPage | ${title}`>
+<LayoutPage title=`NicaPage | ${title}`>
   <main
     id="main-content"
     class="px-8 py-12 md:mx-auto md:max-w-2xl lg:flex lg:max-w-none lg:items-end lg:justify-center lg:gap-8 lg:px-12"
@@ -58,4 +58,4 @@ const { id, title, description, image, imageAlt, ingredients, tag } = data;
       </div>
     </section>
   </main>
-</LayoutMeals>
+</LayoutPage>
