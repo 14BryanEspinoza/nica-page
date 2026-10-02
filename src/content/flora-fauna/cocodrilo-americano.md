@@ -2,7 +2,7 @@
 id: "cocodrilo-americano"
 title: "Cocodrilo americano"
 description: "El cocodrilo americano es el depredador tope de los humedales nicaragüenses y puede superar los cuatro metros de largo en ríos, estuarios y manglares como el Río Coco, La Flor y Solentiname. Durante años la caza y la pérdida de playas de anidación mermaron sus poblaciones, pero la protección de los sitios de desove está mostrando una recuperación prometedora. Aun así, la especie sigue siendo Vulnerable por la presión del desarrollo costero y la cacería, y su presencia funciona como un termómetro de la salud de los humedales."
-image: "../../assets/nature/crocodylus.png"
+image: "../../assets/nature/crocodylus.jpg"
 imageAlt: "Reptil tomando el sol en la orilla fangosa con la boca entreabierta"
 scientificName: "Crocodylus acutus"
 category: "Fauna"
