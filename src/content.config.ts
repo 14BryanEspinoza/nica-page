@@ -37,6 +37,16 @@ const natureSchema = ({ image }: { image: ImageFunction }) =>
     conservationStatus: z.string(),
   });
 
+const historySchema = ({ image }: { image: ImageFunction }) =>
+  commonSchema({ image })
+    .omit({ description: true })
+    .extend({
+      period: z.string(),
+      yearRange: z.string(),
+      order: z.coerce.number(),
+      highlights: z.array(z.string()),
+    });
+
 export const collections = {
   destination: defineCollection({
     loader: glob({
@@ -60,5 +70,13 @@ export const collections = {
       base: "./src/content/flora-fauna",
     }),
     schema: natureSchema,
+  }),
+
+  history: defineCollection({
+    loader: glob({
+      pattern: "**/*.{md,mdx}",
+      base: "./src/content/history",
+    }),
+    schema: historySchema,
   }),
 };
