@@ -1,0 +1,89 @@
+---
+import { getCollection, render } from "astro:content";
+import { Picture } from "astro:assets";
+
+const history = (await getCollection("history")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const entries = await Promise.all(
+  history.map(async (entry) => ({
+    entry,
+    Content: (await render(entry)).Content,
+  })),
+);
+---
+
+<section class="mx-auto mb-24 max-w-5xl px-4">
+  <div class="relative">
+    <div class="absolute inset-y-0 left-4 w-px -translate-x-1/2 bg-text-blue-light md:left-1/2"></div>
+
+    {entries.map(({ entry, Content }, index) => (
+      <article class="relative grid gap-4 pb-12 pl-10 md:grid-cols-2 md:gap-x-16 md:pb-16 md:pl-0">
+        <span class="group absolute top-6 left-4 h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-text-blue-light bg-bg-primary md:left-1/2" />
+
+        <div class:list={[index % 2 === 1 && "md:col-start-2"]}>
+          <div class="rounded-md border border-border bg-bg-secondary p-6 shadow-sm">
+            <div class="mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span class="text-sm font-semibold text-text-blue">
+                {entry.data.yearRange}
+              </span>
+
+              <span class="text-xs text-text-muted">{entry.data.period}</span>
+            </div>
+
+            <h3 class="mb-4 text-lg font-bold text-text-primary">
+              {entry.data.title}
+            </h3>
+
+            <figure class="mb-4 overflow-hidden rounded-md">
+              <Picture
+                src={entry.data.image}
+                alt={entry.data.imageAlt}
+                formats={["avif", "webp"]}
+                width={640}
+                height={480}
+                loading="lazy"
+                decoding="async"
+                class="h-48 w-full object-cover"
+              />
+            </figure>
+
+            <ul class="mb-4 list-disc space-y-1.5 pl-5 text-sm text-text-secondary marker:text-text-blue-light">
+              {entry.data.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+
+            <div class="timeline-body border-t border-border pt-4">
+              <Content />
+            </div>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .timeline-body :global(p) {
+    margin-bottom: 0.75rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .timeline-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .timeline-body :global(strong) {
+    color: var(--color-text-primary);
+    font-weight: 700;
+  }
+
+  .timeline-body :global(a) {
+    color: var(--color-text-blue-light);
+    text-decoration: underline;
+  }
+</style>
