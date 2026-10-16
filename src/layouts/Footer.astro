@@ -1,12 +1,9 @@
 ---
-import Link from "@components/Link.astro";
 import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
+import Link from "@components/Link.astro";
 ---
 
-<footer
-  class="bg-text-blue px-8 py-16 text-bg-primary"
-  aria-label="pie de página"
->
+<footer class="bg-linear-to-r from-text-blue to-text-blue-light px-8 py-16 text-bg-primary">
   <h2 class="mb-4 text-2xl font-bold uppercase">NicaPage</h2>
 
   <p>
@@ -14,7 +11,7 @@ import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
     Nicaragua. La tierra de los lagos y los volcanes.
   </p>
 
-  <section class="my-12 grid grid-cols-1 gap-12 md:grid-cols-2">
+  <section class="my-12 grid gap-12 md:grid-cols-2">
     <article>
       <h3 class="mb-4 font-bold">Redes sociales</h3>
 
@@ -24,8 +21,7 @@ import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
             <li>
               <Link
                 {...link}
-                viewIcon
-                className="rounded-full border border-text-muted p-3 hover:border-bg-tertiary hover:text-bg-tertiary"
+                className="rounded-full border border-text-muted p-3 hover:border-border hover:text-bg-primary"
               />
             </li>
           ))}
@@ -43,7 +39,7 @@ import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
               <Link
                 url={link.url}
                 label={link.label}
-                className="hover:border-bg-tertiary hover:text-bg-tertiary hover:underline"
+                className="hover:underline"
               />
             </li>
           ))}
@@ -60,13 +56,13 @@ import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
             <Link
               url={link.url}
               label={link.label}
-              className="text-sm hover:border-bg-tertiary hover:text-bg-tertiary hover:underline"
+              className="text-sm hover:underline"
             />
           </li>
         ))}
       </ul>
     </nav>
 
-    <small class="opacity-90">&copy; 14BryanEspinoza - 2026</small>
+    <small>&copy; 14BryanEspinoza - 2026</small>
   </article>
 </footer>

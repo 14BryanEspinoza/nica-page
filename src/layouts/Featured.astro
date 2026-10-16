@@ -17,10 +17,10 @@ import ContainerText from "@components/ContainerText.astro";
 import Link from "@components/Link.astro";
 ---
 
-<section class="bg-bg-secondary px-8 py-24" aria-labelledby="destination-title">
+<section class="bg-bg-secondary px-8 py-24 md:px-12">
   <ContainerText title={title} description={description} />
 
-  <div class="mx-4 mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+  <div class="mx-4 mt-12 grid gap-4 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
     {collection.map((coll) => {
       const { title, image, imageAlt, description } = coll.data;
 
@@ -39,7 +39,7 @@ import Link from "@components/Link.astro";
     <Link
       url={link}
       label={`Explora ${label} ->`}
-      className="rounded-md bg-text-blue-light p-2 px-6 font-bold text-bg-primary hover:bg-text-success"
+      className="rounded-md bg-text-blue-light p-4 px-6 font-bold text-bg-primary hover:bg-success"
     />
   </div>
 </section>

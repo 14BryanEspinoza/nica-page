@@ -14,20 +14,20 @@ const { title, description, buttonText, buttonLink, buttonLink2, buttonText2 } =
   Astro.props;
 ---
 
-<section class="bg-bg-tertiary px-8 py-24" aria-labelledby="cta-title">
+<section class="bg-bg-tertiary px-8 py-24 md:px-12">
   <ContainerText title={title} description={description} />
 
   <div class="mt-4 flex justify-center gap-6">
     <a
       href={buttonLink}
-      class="rounded-md bg-text-blue-light p-2 px-6 font-bold text-bg-primary hover:bg-text-success"
+      class="rounded-md bg-text-blue-light p-2 px-6 font-bold text-bg-primary transition hover:bg-success"
     >
       {buttonText}
     </a>
 
     <a
       href={buttonLink2}
-      class="rounded-md border border-text-blue-light p-2 px-6 font-bold text-text-blue-light hover:border-transparent hover:bg-text-success hover:text-bg-primary"
+      class="rounded-md border border-text-blue-light p-2 px-6 font-bold text-text-blue-light transition hover:border-transparent hover:bg-success hover:text-bg-primary"
     >
       {buttonText2}
     </a>

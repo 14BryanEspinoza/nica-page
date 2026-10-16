@@ -4,28 +4,25 @@ import Link from "@components/Link.astro";
 import collageNic from "@assets/collage-nicaragua.png";
 ---
 
-<section
-  class="grid grid-cols-1 gap-12 bg-linear-to-r from-text-blue to-text-blue-light px-8 py-24 text-bg-primary md:grid-cols-2 lg:items-center lg:px-16"
-  aria-labelledby="home-title"
->
+<section class="grid gap-8 bg-linear-to-r from-text-blue to-text-blue-light px-8 py-24 text-bg-primary md:grid-cols-2 lg:items-center lg:px-16">
   <div>
     <h1 class="mb-4 text-3xl font-bold lg:text-4xl">Descubre Nicaragua</h1>
 
-    <p class="mb-8">
+    <p class="mb-8 text-balance">
       La tierra de los lagos y los volcanes te espera. Un país rico en historia,
       cultura y playas paradisíacas, con una gastronomía que te hará enamorarte.
     </p>
 
     <Link
-      url="/nica-page/tourism"
+      url={import.meta.env.BASE_URL + "tourism"}
       label="Explora destinos ->"
-      className="max-w-2xs rounded-md bg-bg-primary py-2 font-bold text-text-primary hover:bg-text-success hover:text-bg-primary"
+      className="max-w-2xs rounded-md bg-bg-primary py-2 font-bold text-text-primary hover:bg-success hover:text-bg-primary"
     />
 
     <Link
       url="#discover"
       label="Saber más ->"
-      className="mt-4 max-w-2xs rounded-md border border-bg-primary py-2 font-bold text-bg-primary hover:border-transparent  hover:bg-text-success hover:text-bg-primary"
+      className="mt-4 max-w-2xs rounded-md border border-bg-primary py-2 font-bold text-bg-primary hover:border-transparent  hover:bg-success hover:text-bg-primary"
     />
   </div>
 
