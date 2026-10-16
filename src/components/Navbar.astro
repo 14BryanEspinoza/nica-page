@@ -1,39 +1,42 @@
 ---
-import { Picture } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import Link from "@components/Link.astro";
 import { linkNavbar } from "@data/links";
-import favicon from "@assets/favicon.png";
+import Link from "@components/Link.astro";
 
 const currentPath = Astro.url.pathname;
 ---
 
-<a
-  class="flex items-center gap-4 transition hover:scale-105"
-  href="/nica-page/"
->
-  <figure class="size-8">
-    <Picture
-      src={favicon}
-      alt="logotipo de la página"
+<figure class="size-7">
+  <a
+    class="flex items-center gap-2 transition hover:scale-105"
+    href={import.meta.env.BASE_URL}
+  >
+    <img
+      src={import.meta.env.BASE_URL + "favicon.png"}
+      alt="ir al inicio"
       loading={"eager"}
-      formats={["avif", "webp"]}
-      priority
     />
-  </figure>
-  <span class="text-lg font-bold text-text-blue">NicaPage</span>
-</a>
+    <span class="text-lg font-bold text-text-blue">NicaPage</span>
+  </a>
+</figure>
 
-<input type="checkbox" id="menu-toggle" class="peer hidden" />
-<label for="menu-toggle" aria-label="abrir menú">
-  <Icon name="lucide:menu" class="cursor-pointer text-3xl lg:hidden" />
-</label>
+<button
+  type="button"
+  id="menu-toggle"
+  class="lg:hidden"
+  aria-expanded="false"
+  aria-controls="nav-main"
+  aria-label="menú de navegación"
+>
+  <Icon name="lucide:menu" class="cursor-pointer text-3xl" aria-hidden="true" />
+</button>
 
 <nav
-  class="hidden h-[92dvh] w-full flex-col items-center justify-center peer-checked:flex lg:flex lg:h-auto lg:w-auto"
-  aria-label="principal"
+  id="nav-main"
+  class="hidden h-[91dvh] w-full flex-col items-center justify-center lg:flex lg:h-auto lg:w-auto"
+  aria-label="Navegación principal"
 >
-  <ul role="list" class="lg:flex lg:items-center lg:gap-8">
+  <ul role="list" class="lg:flex lg:items-center lg:gap-6">
     {linkNavbar.map((link) => {
       const normalize = (path: string) => path.replace(/\/$/, "");
       const isActive = normalize(currentPath) === normalize(link.url);
@@ -42,8 +45,7 @@ const currentPath = Astro.url.pathname;
         <li>
           <Link
             {...link}
-            className="mt-12 hover:text-text-blue-light lg:mt-0"
-            viewIcon
+            className="mt-12 w-fit hover:text-text-blue lg:mt-0"
             active={isActive}
           />
         </li>
@@ -51,3 +53,32 @@ const currentPath = Astro.url.pathname;
     })}
   </ul>
 </nav>
+
+<script>
+  const btn = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-main");
+
+  let open = false;
+
+  const setOpen = (next: boolean) => {
+    open = next;
+
+    btn?.setAttribute("aria-expanded", String(open));
+
+    nav?.classList.toggle("hidden", !open);
+    nav?.classList.toggle("flex", open);
+  };
+
+  btn?.addEventListener("click", () => setOpen(!open));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && open) {
+      setOpen(false);
+      btn?.focus();
+    }
+  });
+
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+</script>

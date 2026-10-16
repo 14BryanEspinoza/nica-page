@@ -17,7 +17,6 @@ export default defineConfig({
   build: { assets: "assets" },
 
   image: {
-    domains: ["devsapihub.com"],
     service: sharpImageService({
       avif: { effort: 4, chromaSubsampling: "4:2:0" },
       webp: { effort: 5 },

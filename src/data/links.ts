@@ -5,29 +5,29 @@ interface LinksProps {
 }
 
 export const linkNavbar: LinksProps[] = [
-  { url: "/nica-page/", label: "Inicio", icon: "lucide:house" },
+  { url: import.meta.env.BASE_URL, label: "Inicio", icon: "lucide:house" },
   {
-    url: "/nica-page/tourism/",
+    url: import.meta.env.BASE_URL + "tourism/",
     label: "Turismo",
     icon: "lucide:plane-takeoff",
   },
   {
-    url: "/nica-page/gastronomy/",
+    url: import.meta.env.BASE_URL + "gastronomy/",
     label: "Gastronomía",
     icon: "lucide:drumstick",
   },
   {
-    url: "/nica-page/history/",
+    url: import.meta.env.BASE_URL + "history/",
     label: "Historia",
     icon: "lucide:landmark",
   },
   {
-    url: "/nica-page/culture/",
+    url: import.meta.env.BASE_URL + "culture/",
     label: "Cultura",
     icon: "lucide:guitar",
   },
   {
-    url: "/nica-page/nature/",
+    url: import.meta.env.BASE_URL + "nature/",
     label: "Naturaleza",
     icon: "lucide:leaf",
   },

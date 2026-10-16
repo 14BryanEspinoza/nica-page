@@ -41,7 +41,8 @@ import { linkNavbar, linkOthers, socialNetworks } from "@data/links";
           {linkNavbar.map((link) => (
             <li>
               <Link
-                {...link}
+                url={link.url}
+                label={link.label}
                 className="hover:border-bg-tertiary hover:text-bg-tertiary hover:underline"
               />
             </li>

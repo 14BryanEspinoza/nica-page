@@ -15,7 +15,7 @@ const destShort = destination.slice(3, 6);
 const gastShort = gastronomy.slice(2, 5);
 ---
 
-<Layout title="NicaPage">
+<Layout>
   <main id="main-content">
     <Hero />
     <Discover />
@@ -23,23 +23,23 @@ const gastShort = gastronomy.slice(2, 5);
       title="Destinos destacados"
       description="Desde playas de arena blanca hasta volcanes activos, Nicaragua ofrece experiencias únicas para cada tipo de viajero..."
       collection={destShort}
-      link="/nica-page/tourism"
+      link={import.meta.env.BASE_URL + "tourism"}
       label="Destinos"
     />
     <Featured
       title="Sabores de Nicaragua"
       description="La gastronomía nicaragüense es una fusión de influencias indígenas, españolas y africanas que crea sabores únicos e inolvidables..."
       collection={gastShort}
-      link="/nica-page/gastronomy"
+      link={import.meta.env.BASE_URL + "gastronomy"}
       label="Gastronomía"
     />
     <CallToAction
       title="¿Listo para descubrir Nicaragua?"
       description="Explora nuestra completa guía de viaje, descubre la historia de nuestra tierra y maravíllate con los fascinantes detalles de este país único."
       buttonText="Explorar historia"
-      buttonLink="/nica-page/history"
+      buttonLink={import.meta.env.BASE_URL + "history"}
       buttonText2="Explorar cultura"
-      buttonLink2="/nica-page/culture"
+      buttonLink2={import.meta.env.BASE_URL + "culture"}
     />
   </main>
   <Footer />
