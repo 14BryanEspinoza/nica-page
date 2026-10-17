@@ -23,7 +23,7 @@ const entries = await Promise.all(
         <span class="group absolute top-6 left-4 h-3.5 w-3.5 -translate-x-1/2 rounded-full border-2 border-text-blue-light bg-bg-primary md:left-1/2" />
 
         <div class:list={[index % 2 === 1 && "md:col-start-2"]}>
-          <div class="rounded-md border border-border bg-bg-secondary p-6 shadow-sm">
+          <div class="rounded-md border border-border bg-bg-primary p-6 shadow-sm">
             <div class="mb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span class="text-sm font-semibold text-text-blue">
                 {entry.data.yearRange}
@@ -41,8 +41,6 @@ const entries = await Promise.all(
                 src={entry.data.image}
                 alt={entry.data.imageAlt}
                 formats={["avif", "webp"]}
-                width={640}
-                height={480}
                 loading="lazy"
                 decoding="async"
                 class="h-48 w-full object-cover"

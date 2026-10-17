@@ -6,10 +6,9 @@ import CallToAction from "@layouts/CallToAction.astro";
 import Footer from "@layouts/Footer.astro";
 ---
 
-<Layout title="NicaPage | Historia">
+<Layout title="NicaPage - Historia">
   <main id="main-content">
     <HeroSecondary
-      id="historyPage"
       title="Historia de Nicaragua"
       description="Un recorrido por los momentos que definieron nuestra nación, además de datos fascinantes."
     />
@@ -18,9 +17,9 @@ import Footer from "@layouts/Footer.astro";
       title="¿Quieres saber más?"
       description="Descubre la cultura, las fiestas y las aventuras que te esperan en Nicaragua."
       buttonText="Explorar naturaleza"
-      buttonLink="/nica-page/nature"
+      buttonLink={import.meta.env.BASE_URL + "nature"}
       buttonText2="Explorar cultura"
-      buttonLink2="/nica-page/culture"
+      buttonLink2={import.meta.env.BASE_URL + "culture"}
     />
   </main>
   <Footer />
