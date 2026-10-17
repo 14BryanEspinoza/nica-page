@@ -15,13 +15,15 @@ const destination = await getCollection("destination");
 
   <div class="mx-4 mt-12 grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
     {destination.map((dest) => {
-      const { id, title, image, attractions, moreInfoUrl } = dest.data;
+      const { id, title, image, imageAlt, attractions, moreInfoUrl } =
+        dest.data;
 
       return (
         <CitiesCard
           id={id}
           title={title}
           image={image}
+          imageAlt={imageAlt ?? title}
           attractions={attractions}
           moreInfoUrl={moreInfoUrl}
         />

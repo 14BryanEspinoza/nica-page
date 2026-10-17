@@ -1,4 +1,5 @@
 ---
+import { Picture } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import Link from "@components/Link.astro";
 
@@ -6,6 +7,7 @@ interface Props {
   id: string;
   title: string;
   image: ImageMetadata;
+  imageAlt?: string;
   attractions: {
     name: string;
     url: string;
@@ -13,21 +15,28 @@ interface Props {
   moreInfoUrl: string;
 }
 
-const { id, title, image, attractions, moreInfoUrl } = Astro.props;
+const { id, title, image, imageAlt, attractions, moreInfoUrl } = Astro.props;
 
-const baseArticleStyle =
-  "group overflow-hidden relative min-h-96 rounded-md bg-cover bg-center";
+const baseArticleStyle = "group overflow-hidden relative min-h-96 rounded-md";
 const beforeStyle =
-  "before:content-[''] before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/80 before:pointer-events-none";
+  "before:content-[''] before:absolute before:inset-0 before:z-10 before:bg-linear-to-b before:from-transparent before:to-black/80 before:pointer-events-none";
 const baseCardStyle =
   "relative z-10 flex flex-col justify-end gap-4 mx-6 pb-6 h-full text-bg-primary";
 ---
 
-<article
-  id={id}
-  class=`${baseArticleStyle} ${beforeStyle}`
-  style={`background-image: url('${image.src}')`}
->
+<article id={id} class=`${baseArticleStyle} ${beforeStyle}`>
+  <figure class="absolute inset-0 overflow-hidden">
+    <Picture
+      src={image}
+      alt={imageAlt ?? title}
+      width={400}
+      formats={["avif", "webp"]}
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover"
+    />
+  </figure>
+
   <div
     class=`${baseCardStyle} translate-y-70 transition-transform duration-300 ease-in-out group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0`
   >
