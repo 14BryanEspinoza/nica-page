@@ -6,10 +6,9 @@ import CallToAction from "@layouts/CallToAction.astro";
 import Footer from "@layouts/Footer.astro";
 ---
 
-<Layout title="NicaPage | Gastronomía">
+<Layout title="NicaPage - Gastronomía">
   <main id="main-content">
     <HeroSecondary
-      id="gastronomyPage"
       title="Gastronomía nicaragüense"
       description="Una fusión de sabores indígenas, españoles y afrocaribeños."
     />
@@ -18,9 +17,9 @@ import Footer from "@layouts/Footer.astro";
       title="¿Listo para probar nuestra comida?"
       description="Nicaragua ofrece una experiencia culinaria única. Conoce más sobre nuestros destinos turísticos y planifica tu viaje."
       buttonText="Explorar turismo"
-      buttonLink="/nica-page/tourism"
+      buttonLink={import.meta.env.BASE_URL + "tourism"}
       buttonText2="Explorar historia"
-      buttonLink2="/nica-page/history"
+      buttonLink2={import.meta.env.BASE_URL + "history"}
     />
   </main>
   <Footer />

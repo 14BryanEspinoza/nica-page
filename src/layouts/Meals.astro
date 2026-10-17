@@ -6,22 +6,18 @@ import ContainerText from "@components/ContainerText.astro";
 const gastronomy = await getCollection("gastronomy");
 ---
 
-<section
-  id="meals"
-  class="bg-bg-primary px-8 py-24"
-  aria-labelledby="meals-title"
->
+<section id="meals" class="bg-bg-primary px-8 py-24">
   <ContainerText
     title="Platos Tradicionales"
     description="La cocina nicaragüense es una mezcla de tradiciones indígenas, influencias españolas y toques del Caribe que crean sabores únicos."
   />
 
-  <div class="mx-4 mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+  <div class="mx-4 mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
     {gastronomy.map((gast) => {
       const { id, title, image } = gast.data;
 
       return (
-        <a href={`/gastronomy/${id}`}>
+        <a href={import.meta.env.BASE_URL + `gastronomy/${id}`}>
           <article
             id={id}
             class="relative min-h-80 cursor-pointer overflow-hidden rounded-md bg-cover bg-center transition hover:scale-105"

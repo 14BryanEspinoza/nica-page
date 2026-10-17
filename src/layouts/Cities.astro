@@ -7,13 +7,13 @@ import CitiesCard from "@components/CitiesCard.astro";
 const destination = await getCollection("destination");
 ---
 
-<section class="bg-bg-primary px-8 py-24" aria-labelledby="destination-title">
+<section class="bg-bg-primary px-8 py-24">
   <ContainerText
     title="Lugares que debes visitar"
     description="Nicaragua ofrece una gran variedad de destinos turísticos, desde playas idílicas hasta ciudades coloniales ricas en historia."
   />
 
-  <div class="mx-4 mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+  <div class="mx-4 mt-12 grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
     {destination.map((dest) => {
       const { id, title, image, attractions, moreInfoUrl } = dest.data;
 

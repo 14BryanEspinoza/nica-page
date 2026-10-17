@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  item: string;
+}
+
+const { item } = Astro.props;
+
+const liStyle =
+  "flex items-center gap-2 rounded-md border border-border bg-bg-secondary px-4 py-2";
+const spanStyle =
+  "flex size-5 items-center justify-center rounded-full text-success border border-success";
+---
+
+<li class={liStyle}>
+  <span class={spanStyle}>
+    <Icon name="lucide:check" class="size-3" />
+  </span>
+
+  <span class="text-sm text-text-primary">{item}</span>
+</li>
