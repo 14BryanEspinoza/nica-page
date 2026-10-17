@@ -6,6 +6,7 @@ import { Icon } from "astro-icon/components";
 import LayoutPage from "@layouts/LayoutPage.astro";
 import ItemList from "@components/ItemList.astro";
 import Tag from "@components/Tag.astro";
+import Footer from "@layouts/Footer.astro";
 
 export const getStaticPaths = async () => {
   const gastronomy = await getCollection("gastronomy");
@@ -89,4 +90,5 @@ const { id, title, description, image, imageAlt, ingredients, tag } = data;
       </section>
     </article>
   </main>
+  <Footer />
 </LayoutPage>

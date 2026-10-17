@@ -1,10 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import { Image, Picture } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
 
 import LayoutPage from "@layouts/LayoutPage.astro";
 import Tag from "@components/Tag.astro";
+import Footer from "@layouts/Footer.astro";
 
 export const getStaticPaths = async () => {
   const nature = await getCollection("nature");
@@ -141,4 +142,5 @@ const {
       </section>
     </div>
   </main>
+  <Footer />
 </LayoutPage>
