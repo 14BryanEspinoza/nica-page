@@ -5,7 +5,7 @@ period: "Pre-1502"
 yearRange: "Antes del siglo XVI"
 order: "1"
 image: "../../assets/history/indegenas.png"
-imageAlt: "Aborigen mesoamericana"
+imageAlt: "Petroglifos y arte aborigen mesoamericano"
 highlights:
   [
     "Poblamiento por tribus Nicaraos (Nahuas) y Chorotegas provenientes del norte de Mesoamérica",
