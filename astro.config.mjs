@@ -10,6 +10,8 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
+  prefetch: true,
+
   integrations: [icon(), sitemap()],
 
   site: "https://14bryanespinoza.github.io/nica-page/",
