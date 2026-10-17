@@ -1,23 +1,19 @@
 ---
+import { culture } from "@data/culture";
+import { celebrations } from "@data/celebrations";
+
 import ContainerText from "@components/ContainerText.astro";
 import Datalist from "@components/Datalist.astro";
 import Cards from "@components/Cards.astro";
-
-import { culture } from "@data/culture";
-import { celebrations } from "@data/celebrations";
 ---
 
-<section
-  id="meals"
-  class="bg-bg-primary px-8 py-24"
-  aria-labelledby="culture-title"
->
+<section class="bg-bg-primary px-8 py-24">
   <ContainerText
     title="Cultura Nicaragüense"
     description="Una mezcla vibrante de raíces indígenas, influencias españolas y toques afrocaribeños que crean una identidad única."
   />
 
-  <div class="mx-4 mt-12 mb-24 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+  <div class="mx-4 mt-12 mb-24 grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
     {culture.map((cult) => (
       <Cards {...cult} />
     ))}

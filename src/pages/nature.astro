@@ -6,10 +6,9 @@ import CallToAction from "@layouts/CallToAction.astro";
 import Footer from "@layouts/Footer.astro";
 ---
 
-<Layout title="NicaPage | Naturaleza">
+<Layout title="NicaPage - Naturaleza">
   <main id="main-content">
     <HeroSecondary
-      id="naturePage"
       title="Naturaleza y aventura"
       description="Descubre una biodiversidad única y vive aventuras extremas en Nicaragua."
     />
@@ -18,9 +17,9 @@ import Footer from "@layouts/Footer.astro";
       title="¿Listo para la aventura?"
       description="Planifica tu viaje a Nicaragua y disfruta de experiencias únicas en medio de la naturaleza más salvaje de Centroamérica."
       buttonText="Explorar historia"
-      buttonLink="/nica-page/history"
+      buttonLink={import.meta.env.BASE_URL + "history"}
       buttonText2="Explorar"
-      buttonLink2="/nica-page/"
+      buttonLink2={import.meta.env.BASE_URL}
     />
   </main>
   <Footer />
