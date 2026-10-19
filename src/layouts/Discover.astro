@@ -1,6 +1,7 @@
 ---
 import ContainerText from "@components/ContainerText.astro";
 import videoNic from "@assets/video/nicaragua-video.mp4";
+import videoPoster from "@assets/video/poster.webp";
 ---
 
 <section id="discover" class="bg-bg-primary px-8 py-24 md:px-12">
@@ -15,11 +16,11 @@ import videoNic from "@assets/video/nicaragua-video.mp4";
       id="discover-video"
       class="block w-full"
       src={videoNic}
+      poster={videoPoster.src}
       controls
       muted
-      autoplay
       loop
-      preload="metadata"
+      preload="none"
       playsinline
       aria-label="video promocional de Nicaragua"
     >
@@ -29,16 +30,6 @@ import videoNic from "@assets/video/nicaragua-video.mp4";
 </section>
 
 <script>
-  const handlePageLoad = () => {
-    const video = document.getElementById(
-      "discover-video",
-    ) as HTMLVideoElement | null;
-    if (video) {
-      video.muted = true;
-      video.play().catch(() => {});
-    }
-  };
-
   const handleBeforeSwap = () => {
     const video = document.getElementById(
       "discover-video",
@@ -49,6 +40,5 @@ import videoNic from "@assets/video/nicaragua-video.mp4";
     }
   };
 
-  document.addEventListener("astro:page-load", handlePageLoad);
   document.addEventListener("astro:before-swap", handleBeforeSwap);
 </script>
