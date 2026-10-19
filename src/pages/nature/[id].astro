@@ -34,6 +34,10 @@ const {
 
 <LayoutPage
   title={`NicaPage - ${title}`}
+  description={description}
+  keywords={`${title}, ${category}, ${tag}, ${
+    category === "Fauna" ? "fauna" : "flora"
+  } de Nicaragua, biodiversidad de Nicaragua, especies de Nicaragua`}
   backUrl={import.meta.env.BASE_URL + "nature#nature"}
 >
   <main id="main-content" class="mx-auto max-w-6xl px-6 py-12 lg:px-12">
